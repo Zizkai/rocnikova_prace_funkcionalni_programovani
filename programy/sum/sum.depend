@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1548689327 source:c:\users\zizka\desktop\sablona_rocnikova_prace\nová složka\sum\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1548692104 source:c:\users\ivan\desktop\sum\main.c
+	<stdio.h>
+	<stdlib.h>
+
