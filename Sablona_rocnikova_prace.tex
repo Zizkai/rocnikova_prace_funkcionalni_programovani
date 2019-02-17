@@ -233,12 +233,19 @@ Za pomocí rekurze se vypíše nejdříve otec, následně levý syn a nakonec p
 \textbf{Převod z binárního stromu zpět na infixový zápis:}\newline
 Opět za pomoci rekurze vypíšeme vždy nejdříve levého syna, následně otce a poté pravého syna. Před každým vypsáním levého syna vypíšeme závorku a po každém vypsání pravého syna ukončíme tuto závorku. Tím nám vznikne původní výraz, který bude obsahovat více závorek nežli původní, ale výsledek výrazu zůstane nezměněn. 
 
+\chapter{Dokumentace}
+Oba níže popsané programy mají stejnou funkci, převádějí prefixovou notaci na infixovou. Toho docilují za pomoci binárních nevybalancovaných stromů, které jsme si představili výše.
+\subsection*{Získání zdrojového kódu}
+Existují dvě cesty jakými lze získat zdrojový kód. První možností je přistoupit na url adresu (viz. příloha ), zde kliknout na tlačítko \textit{Clone or download}, a následně vybrat možnost \textit{Download ZIP}. Tento soubor je nutné poté extrahovat. 
 
- 
-
-
-
+Druhou možností je využití nastroje \textit{Git}. Zde je opět nutné přejít na url adresu (viz. příloha), zde kliknout na tlačítko \textit{Clone or download} a následně zkopírovat odkaz, který se nachází v nově vzniklém boxu. Poté je nutné se přesunout do vašeho počítače ve kterém je nainstalován program \textit{Git}. Otevřít konzoli Git (\textit{Git Bash}), zde je nutné se navigovat do složky, kam chcete uložit repositář, a poté užít příkaz \textit{git clone (adresa kterou jsme si již dříve zkopírovali)}.  
 \section{Dokumentace procedurálního programu}
+\subsubsection{Vývoj a editace}
+Program byl vyvíjen v nástroji \textit{Code Blocks}, v repositáři se nachází nastavený projekt. Editace vstupu probíhá v přímo v kódu, v souboru \textit{main.c}. Rozhodl jsem se zvolit tento ne až tak praktický způsob, jelikož jsem chtěl primárně ukázat rozdíl mezi imperativním a neimperativním způsobem programování. 
+\subsubsection{Princip fungování}
+Program vezme vstup, který mu zadal uživatel (modifikoval pole \textit{vstupniData}), převede ho do pole datového typu \textit{prefix}. Datový typ prefix obsahuje dvě proměnné z nich první je znak a druhá číslo. Pokud je zadáno číslo a 
+
+Základní stavební jednotkou celého programu je struktura \textit{strom}. Ta tvoří základ aritmetického stromu, obsahuje ukazatel na levého a pravého syna, ukazatel na svého otce a dvě proměnné, které uchovávají znaménko nebo číslo. Pokud ukazatel nikam nevede, je mu nastavena hodnota \textit{NULL}. Příkladem může být ukazatel na otce u kořene celého stromu. Ten logicky nikam nevede a tak je nastavena hodnota \textit{NULL}. 
 \section{Dokumentace neprocedurálního programu}
 \section{Srovnání}
 
@@ -267,6 +274,15 @@ Nik1996 a Shrikanth13, 2013. geekforgeeks.org: Expression Evaluation [online].  
 
 %%% Prostor pro přílohy práce
 \chapwithtoc{Přílohy}
+\begin{enumerate}
+\item \textbf{Git repositář imperativního programu:} 
+
+\url{https://github.com/Zizkai/funkcionalni_programovani_imperativni_program}
+
+\item \textbf{Git repositář neimperativního programu:}
+
+\url{} 
+\end{enumerate}
 
 \openright
 \end{document}
