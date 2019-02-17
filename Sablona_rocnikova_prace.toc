@@ -21,10 +21,18 @@
 \contentsline {subsubsection}{P\IeC {\v r}evod notac\IeC {\'\i }}{13}{section*.7}% 
 \contentsline {chapter}{\numberline {4}Dokumentace}{14}{chapter.4}% 
 \contentsline {section}{\numberline {4.1}Dokumentace procedur\IeC {\'a}ln\IeC {\'\i }ho programu}{14}{section.4.1}% 
-\contentsline {subsubsection}{V\IeC {\'y}voj a editace}{14}{section*.9}% 
-\contentsline {subsubsection}{Princip fungov\IeC {\'a}n\IeC {\'\i }}{14}{section*.10}% 
-\contentsline {section}{\numberline {4.2}Dokumentace neprocedur\IeC {\'a}ln\IeC {\'\i }ho programu}{14}{section.4.2}% 
-\contentsline {section}{\numberline {4.3}Srovn\IeC {\'a}n\IeC {\'\i }}{14}{section.4.3}% 
-\contentsline {chapter}{\numberline {5}Z\IeC {\'a}v\IeC {\v e}r}{15}{chapter.5}% 
-\contentsline {chapter}{Literatura}{16}{chapter*.11}% 
-\contentsline {chapter}{P\IeC {\v r}\IeC {\'\i }lohy}{17}{chapter*.12}% 
+\contentsline {subsection}{\numberline {4.1.1}V\IeC {\'y}voj a editace}{14}{subsection.4.1.1}% 
+\contentsline {subsection}{\numberline {4.1.2}Princip fungov\IeC {\'a}n\IeC {\'\i }}{14}{subsection.4.1.2}% 
+\contentsline {subsubsection}{poleDoPrefix}{15}{section*.9}% 
+\contentsline {subsubsection}{UkladaniDoStromu}{15}{section*.10}% 
+\contentsline {subsubsection}{ZapisDoLeva}{15}{section*.11}% 
+\contentsline {subsubsection}{ZapisDoPrava}{15}{section*.12}% 
+\contentsline {subsubsection}{strom}{15}{section*.13}% 
+\contentsline {subsubsection}{infix}{16}{section*.14}% 
+\contentsline {subsubsection}{vypisL}{16}{section*.15}% 
+\contentsline {subsubsection}{vypisR}{16}{section*.16}% 
+\contentsline {section}{\numberline {4.2}Dokumentace neprocedur\IeC {\'a}ln\IeC {\'\i }ho programu}{16}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Srovn\IeC {\'a}n\IeC {\'\i }}{16}{section.4.3}% 
+\contentsline {chapter}{\numberline {5}Z\IeC {\'a}v\IeC {\v e}r}{17}{chapter.5}% 
+\contentsline {chapter}{Literatura}{18}{chapter*.17}% 
+\contentsline {chapter}{P\IeC {\v r}\IeC {\'\i }lohy}{19}{chapter*.18}% 

@@ -238,15 +238,58 @@ Oba níže popsané programy mají stejnou funkci, převádějí prefixovou nota
 \subsection*{Získání zdrojového kódu}
 Existují dvě cesty jakými lze získat zdrojový kód. První možností je přistoupit na url adresu (viz. příloha ), zde kliknout na tlačítko \textit{Clone or download}, a následně vybrat možnost \textit{Download ZIP}. Tento soubor je nutné poté extrahovat. 
 
-Druhou možností je využití nastroje \textit{Git}. Zde je opět nutné přejít na url adresu (viz. příloha), zde kliknout na tlačítko \textit{Clone or download} a následně zkopírovat odkaz, který se nachází v nově vzniklém boxu. Poté je nutné se přesunout do vašeho počítače ve kterém je nainstalován program \textit{Git}. Otevřít konzoli Git (\textit{Git Bash}), zde je nutné se navigovat do složky, kam chcete uložit repositář, a poté užít příkaz \textit{git clone (adresa kterou jsme si již dříve zkopírovali)}.  
-\section{Dokumentace procedurálního programu}
-\subsubsection{Vývoj a editace}
-Program byl vyvíjen v nástroji \textit{Code Blocks}, v repositáři se nachází nastavený projekt. Editace vstupu probíhá v přímo v kódu, v souboru \textit{main.c}. Rozhodl jsem se zvolit tento ne až tak praktický způsob, jelikož jsem chtěl primárně ukázat rozdíl mezi imperativním a neimperativním způsobem programování. 
-\subsubsection{Princip fungování}
-Program vezme vstup, který mu zadal uživatel (modifikoval pole \textit{vstupniData}), převede ho do pole datového typu \textit{prefix}. Datový typ prefix obsahuje dvě proměnné z nich první je znak a druhá číslo. Pokud je zadáno číslo a 
+Druhou možností je využití nastroje \textit{Git}. Zde je opět nutné přejít na url adresu (viz. příloha), zde kliknout na tlačítko \textit{Clone or download} a následně zkopírovat odkaz, který se nachází v nově vzniklém boxu. Poté je nutné se přesunout do vašeho počítače ve kterém je nainstalován program \textit{Git}. Otevřít konzoli Git (\textit{Git Bash}), zde je nutné se navigovat do složky, kam chcete uložit repositář, a~poté užít příkaz \textit{git clone (adresa kterou jsme si již dříve zkopírovali)}.
 
-Základní stavební jednotkou celého programu je struktura \textit{strom}. Ta tvoří základ aritmetického stromu, obsahuje ukazatel na levého a pravého syna, ukazatel na svého otce a dvě proměnné, které uchovávají znaménko nebo číslo. Pokud ukazatel nikam nevede, je mu nastavena hodnota \textit{NULL}. Příkladem může být ukazatel na otce u kořene celého stromu. Ten logicky nikam nevede a tak je nastavena hodnota \textit{NULL}. 
+V tuto chvíli máte přístup ke zdrojovému kódu jednotlivých programů.   
+\section{Dokumentace procedurálního programu}
+\subsection{Vývoj a editace}
+Program byl vyvíjen v nástroji \textit{Code Blocks}, v repositáři se nachází nastavený projekt. Editace vstupu probíhá přímo v~kódu, v~souboru \textit{main.c}. Rozhodl jsem se zvolit tento ne až tak praktický způsob, jelikož jsem chtěl primárně ukázat rozdíl mezi imperativním a~neimperativním způsobem programování. 
+\subsection{Princip fungování}
+Program vezme vstup, který mu zadal uživatel (modifikoval pole \textit{vstupniData}), převede ho do pole datového typu \textit{prefix}. Datový typ prefix obsahuje dvě proměnné z~nich první je znak a~druhá číslo. Pokud je zadáno číslo, znak má nastavenou hodnotu na \textit{NULL}. Tento výše popsaný proces se děje pomocí funkce \textit{poleDoPrefix}.
+
+Ve funkci \textit{main} je následně vytvořena hlava stromu (datový typ \textit{strom}) a její všechny části jsou nastaveny na \textit{NULL}. Poté je volána funkce \textit{UkladaniDoStromu}, která zajišťuje inicializaci stavby stromu.
+
+Po ukončení stavby stromu je zavolána funkce \textit{infix}, která vypíše do konzole infixový tvar. 
+
+
+\subsubsection{poleDoPrefix} 
+Tato funkce vyžaduje dva argumenty, prvním z nich je vstupní pole (zadaná data) a druhým argumentem je počet prvků pole, ten je získán podílem, kde prvním operandem je velikost vstupního pole a druhým je velikost datového typu \textit{char}. Výstupem funkce \textit{poleDoPrefix} je ukazatel na  pole datového typu \textit{prefix}.
+
+\subsubsection{UkladaniDoStromu}
+Inicializuje ukládání do stromu, tím že kontroluje, jestli nebyl zadán prázdný vstup a následně volá funkci \textit{ZapisDoLeva}. Argumenty funkce \textit{UkladaniDoStromu} jsou vstupní data (datový typ prefix), ukazatel na hlavu (datový typ strom) a velikost pole (datový typ int). Výstupem není nic, jelikož ukazatel na hlavu stromu si uchováváme ve funkci \textit{main}.
+
+\subsubsection{ZapisDoLeva}
+Argumenty této funkce jsou: ukazatel na hlavu, vstupní pole a index (ten říká kolikáté pole vstupních dat se má uložit do stromu). Funkce si následně vytvoří proměnnou syn, která je ukazatelem na datový typ \textit{strom}. Poté je kontrolováno, zda se má uložit znaménko či číslo. Pokud se jedná o znaménko je do struktury \textit{syn} uloženo a do ukazatele \textit{syn->Otec} je uložen odkaz na otce (hlavu, která byla argumentem funkce). Také je Otci (hlava v argumentu), je nastaven ukazatel na levého syna. Následně je rekurzivně volána opět funkce \textit{ZapisDoLeva} s vyšším indexem o jedna. 
+
+Jedná-li se o číslo, je uloženo do struktury uloženo číslo a odkaz na otce a otci je uložen ukazatel na syna. Poté je zavolána funkce \textit{ZapisDoPrava}, ale je jí předán odkaz na Otce. 
+
+\subsubsection{ZapisDoPrava}
+V principu funguje stejně jako předchozí funkce, akorát s tím rozdílem, že pokud se jedná o znaménko netypicky volá funkci \textit{ZapisDoLeva}.  
+
+V případě, že se jedná o číslo provede naprosto stejné kroky, jako funkce\textit{ZapisDoLeva}, ale rozdílem je to, že funkci \textit{ZapisDoPrava} je předán ukazatel na Otce Otce syna (Otec->Otec).
+
+
+\subsubsection{strom}
+Základní stavební jednotkou celého programu je struktura \textit{strom}. Ta tvoří základ aritmetického stromu, obsahuje ukazatel na levého a pravého syna, ukazatel na svého otce a~dvě proměnné, které uchovávají znaménko nebo číslo. Pokud ukazatel nikam nevede, je mu nastavena hodnota \textit{NULL}. Příkladem může být ukazatel na otce u kořene celého stromu. Ten logicky nikam nevede, a~tak je nastavena hodnota \textit{NULL}. 
+
+\subsubsection{infix}
+Funkce inicializuje vypsání infixového tvaru výrazu. To je zajištěno tím, že vypíše nejdříve levou větev (\textit{vypisL}) a následně pravou (\textit{vypisR}). Mezi ně je vypsáno znaménko.
+
+\subsubsection{vypisL}
+Pokud je v hlavě (ta je předána v argumentu) znaménko, zavolá se funkce \textit{vypisL}, poté se vypíše znaménko v hlavě a následně se volá funkce \textit{vypisR}. 
+
+Je-li v hlavě uloženo číslo, vypíše se začátek závorky a následně toto číslo. 
+
+\subsubsection{vypisR}
+Pokud je v hlavě (ta je předána v argumentu) znaménko, zavolá se funkce \textit{vypisL}, poté se vypíše znaménko v hlavě a následně se volá funkce \textit{vypisR}. 
+
+Je-li v hlavě uloženo číslo, vypíše se toto číslo a následně konec závorky.
+
 \section{Dokumentace neprocedurálního programu}
+
+
+
+
 \section{Srovnání}
 
 \chapter{Závěr}
@@ -256,9 +299,9 @@ Základní stavební jednotkou celého programu je struktura \textit{strom}. Ta 
 \begin{thebibliography}{99}
 
 \bibitem{Funk. prog. wiki.}
-Kolektiv autorů, 2019. Wikipedia.org: Funkcionální programování [online]. Poslední změna 14.1.2019 [cit. 2.1.2019]. Dostupné z: \url{https://cs.wikipedia.org/wiki/Funkcion%C3%A1ln%C3%AD_programov%C3%A1n%C3%AD#Historie}  
+Kolektiv autorů, 2018. Wikipedia.org: Funkcionální programování [online]. Poslední změna 1.12.2018 [cit. 2.1.2019]. Dostupné z: \url{https://cs.wikipedia.org/wiki/Funkcion%C3%A1ln%C3%AD_programov%C3%A1n%C3%AD#Historie}  
 \bibitem{lambda kalkul wiki.}
-Kolektiv autorů, 2019. Wikipedia.org: Lambda kalkul [online]. Poslední změna 24.12.2018 [cit. 12.2.2019]. Dostupné z: \url{https://cs.wikipedia.org/wiki/Lambda_kalkul}
+Kolektiv autorů, 2018. Wikipedia.org: Lambda kalkul [online]. Poslední změna 24.12.2018 [cit. 12.2.2019]. Dostupné z: \url{https://cs.wikipedia.org/wiki/Lambda_kalkul}
 \bibitem{volné a vázané}
 Petr Zemek, 2008. $\lambda$-kalkul rychle a pochopitelně [online]. Poslední změna 28.5.2008 [cit. 12.12.2018]. Str. 2. Dostupné z: \url{https://publications.petrzemek.net/articles/PZ_-_IPP-Lambda-Kalkul.pdf}
 \bibitem{monady}
