@@ -236,58 +236,58 @@ Opět za pomoci rekurze vypíšeme vždy nejdříve levého syna, následně otc
 \chapter{Dokumentace}
 Oba níže popsané programy mají stejnou funkci, převádějí prefixovou notaci na infixovou. Toho docilují za pomoci binárních nevybalancovaných stromů, které jsme si představili výše.
 \subsection*{Získání zdrojového kódu}
-Existují dvě cesty jakými lze získat zdrojový kód. První možností je přistoupit na url adresu (viz. příloha ), zde kliknout na tlačítko \textit{Clone or download}, a následně vybrat možnost \textit{Download ZIP}. Tento soubor je nutné poté extrahovat. 
+Existují dvě cesty jak lze získat zdrojový kód. První možností je přistoupit na url adresu (viz. příloha ), zde kliknout na tlačítko \textit{Clone or download}, a následně vybrat možnost \textit{Download ZIP}. Tento soubor je poté nutno extrahovat. 
 
-Druhou možností je využití nastroje \textit{Git}. Zde je opět nutné přejít na url adresu (viz. příloha), zde kliknout na tlačítko \textit{Clone or download} a následně zkopírovat odkaz, který se nachází v nově vzniklém boxu. Poté je nutné se přesunout do vašeho počítače ve kterém je nainstalován program \textit{Git}. Otevřít konzoli Git (\textit{Git Bash}), zde je nutné se navigovat do složky, kam chcete uložit repositář, a~poté užít příkaz \textit{git clone (adresa kterou jsme si již dříve zkopírovali)}.
+Druhou možností je využití nástroje \textit{Git}. Zde je opět nutné přejít na url adresu (viz. příloha), zde kliknout na tlačítko \textit{Clone or download} a následně zkopírovat odkaz, který se nachází v nově vzniklém boxu. Poté je nutné se přesunout do vašeho počítače ve kterém je nainstalován program \textit{Git}. Otevřít konzoli Git (\textit{Git Bash}), zde je nutné se navigovat do složky, kam chcete uložit repositář, a~poté užít příkaz \textit{git clone (adresa kterou jsme si již dříve zkopírovali)}.
 
 V tuto chvíli máte přístup ke zdrojovému kódu jednotlivých programů.   
 \section{Dokumentace procedurálního programu}
 \subsection{Vývoj a editace}
-Program byl vyvíjen v nástroji \textit{Code Blocks}, v repositáři se nachází nastavený projekt. Editace vstupu probíhá přímo v~kódu, v~souboru \textit{main.c}. Rozhodl jsem se zvolit tento ne až tak praktický způsob, jelikož jsem chtěl primárně ukázat rozdíl mezi imperativním a~neimperativním způsobem programování. 
+Program byl vyvíjen v nástroji \textit{Code Blocks}, v repositáři se nachází nastavený projekt. Editace vstupu probíhá přímo v~kódu, v~souboru \textit{main.c}. Rozhodli jsme se zvolit tento, ne až tak praktický způsob, jelikož jsme chtěli primárně ukázat rozdíl mezi imperativním a~neimperativním způsobem programování. 
 \subsection{Princip fungování}
-Program vezme vstup, který mu zadal uživatel (modifikoval pole \textit{vstupniData}), převede ho do pole datového typu \textit{prefix}. Datový typ prefix obsahuje dvě proměnné z~nich první je znak a~druhá číslo. Pokud je zadáno číslo, znak má nastavenou hodnotu na \textit{NULL}. Tento výše popsaný proces se děje pomocí funkce \textit{poleDoPrefix}.
+Program vezme vstup, který mu zadal uživatel (modifikoval pole \textit{vstupniData}), převede ho do pole datového typu \textit{prefix}. Datový typ prefix obsahuje dvě proměnné z~nichž první je znak a~druhá číslo. Pokud je zadáno číslo, znak má nastavenou hodnotu na \textit{NULL}. Tento výše popsaný proces se děje pomocí funkce \textit{poleDoPrefix} (viz strana \pageref{pDP}.).
 
-Ve funkci \textit{main} je následně vytvořena hlava stromu (datový typ \textit{strom}) a její všechny části jsou nastaveny na \textit{NULL}. Poté je volána funkce \textit{UkladaniDoStromu}, která zajišťuje inicializaci stavby stromu.
+Ve funkci \textit{main} je následně vytvořena hlava stromu (datový typ \textit{strom}) a její všechny části jsou nastaveny na \textit{NULL}. Poté je volána funkce \textit{UkladaniDoStromu} (viz strana \pageref{UDS}.), která zajišťuje inicializaci stavby stromu.
 
-Po ukončení stavby stromu je zavolána funkce \textit{infix}, která vypíše do konzole infixový tvar. 
+Po ukončení stavby stromu je zavolána funkce \textit{infix} (viz strana \pageref{infix}.), která vypíše do konzole infixový tvar. 
 
 
-\subsubsection{poleDoPrefix} 
+\subsubsection{poleDoPrefix} \label{pDP}
 Tato funkce vyžaduje dva argumenty, prvním z nich je vstupní pole (zadaná data) a druhým argumentem je počet prvků pole, ten je získán podílem, kde prvním operandem je velikost vstupního pole a druhým je velikost datového typu \textit{char}. Výstupem funkce \textit{poleDoPrefix} je ukazatel na  pole datového typu \textit{prefix}.
 
-\subsubsection{UkladaniDoStromu}
-Inicializuje ukládání do stromu, tím že kontroluje, jestli nebyl zadán prázdný vstup a následně volá funkci \textit{ZapisDoLeva}. Argumenty funkce \textit{UkladaniDoStromu} jsou vstupní data (datový typ prefix), ukazatel na hlavu (datový typ strom) a velikost pole (datový typ int). Výstupem není nic, jelikož ukazatel na hlavu stromu si uchováváme ve funkci \textit{main}.
+\subsubsection{UkladaniDoStromu} \label{UDS}
+Inicializuje ukládání do stromu, tím že kontroluje, jestli nebyl zadán prázdný vstup a následně volá funkci \textit{ZapisDoLeva} (viz strana \pageref{ZDL}.). Argumenty funkce \textit{UkladaniDoStromu} jsou vstupní data (datový typ prefix), ukazatel na hlavu (datový typ strom) a velikost pole (datový typ int). Výstupem není nic, jelikož ukazatel na hlavu stromu si uchováváme ve funkci \textit{main}.
 
-\subsubsection{ZapisDoLeva}
-Argumenty této funkce jsou: ukazatel na hlavu, vstupní pole a index (ten říká kolikáté pole vstupních dat se má uložit do stromu). Funkce si následně vytvoří proměnnou syn, která je ukazatelem na datový typ \textit{strom}. Poté je kontrolováno, zda se má uložit znaménko či číslo. Pokud se jedná o znaménko je do struktury \textit{syn} uloženo a do ukazatele \textit{syn->Otec} je uložen odkaz na otce (hlavu, která byla argumentem funkce). Také je Otci (hlava v argumentu), je nastaven ukazatel na levého syna. Následně je rekurzivně volána opět funkce \textit{ZapisDoLeva} s vyšším indexem o jedna. 
+\subsubsection{ZapisDoLeva} \label{ZDL}
+Argumenty této funkce jsou: ukazatel na hlavu, vstupní pole a index (ten říká kolikáté pole vstupních dat se má uložit do stromu). Funkce si následně vytvoří proměnnou syn, která je ukazatelem na datový typ \textit{strom} (viz strana \pageref{strom}.). Poté je kontrolováno, zda se má uložit znaménko či číslo. Pokud se jedná o znaménko je do struktury \textit{syn} uloženo a pomocí ukazatelů je vytvořen odkaz z otce na syna a opačně. Následně je rekurzivně volána opět funkce \textit{ZapisDoLeva} s vyšším indexem o jedna. 
 
-Jedná-li se o číslo, je uloženo do struktury uloženo číslo a odkaz na otce a otci je uložen ukazatel na syna. Poté je zavolána funkce \textit{ZapisDoPrava}, ale je jí předán odkaz na Otce. 
+Jedná-li se o číslo, je uloženo do struktury a opět je vytvořeno propojení mezi otcem a synem. Poté je zavolána funkce \textit{ZapisDoPrava} (viz strana \pageref{ZDP}.), ale je jí předán odkaz na otce. 
 
-\subsubsection{ZapisDoPrava}
+\subsubsection{ZapisDoPrava} \label{ZDP}
 V principu funguje stejně jako předchozí funkce, akorát s tím rozdílem, že pokud se jedná o znaménko netypicky volá funkci \textit{ZapisDoLeva}.  
 
-V případě, že se jedná o číslo provede naprosto stejné kroky, jako funkce\textit{ZapisDoLeva}, ale rozdílem je to, že funkci \textit{ZapisDoPrava} je předán ukazatel na Otce Otce syna (Otec->Otec).
+V případě, že se jedná o číslo provede naprosto stejné kroky, jako funkce  \textit{ZapisDoLeva}, ale rozdílem je to, že funkci \textit{ZapisDoPrava} je předán ukazatel na otce otce syna (Otec->Otec).
 
 
-\subsubsection{strom}
+\subsubsection{strom} \label{strom}
 Základní stavební jednotkou celého programu je struktura \textit{strom}. Ta tvoří základ aritmetického stromu, obsahuje ukazatel na levého a pravého syna, ukazatel na svého otce a~dvě proměnné, které uchovávají znaménko nebo číslo. Pokud ukazatel nikam nevede, je mu nastavena hodnota \textit{NULL}. Příkladem může být ukazatel na otce u kořene celého stromu. Ten logicky nikam nevede, a~tak je nastavena hodnota \textit{NULL}. 
 
-\subsubsection{infix}
-Funkce inicializuje vypsání infixového tvaru výrazu. To je zajištěno tím, že vypíše nejdříve levou větev (\textit{vypisL}) a následně pravou (\textit{vypisR}). Mezi ně je vypsáno znaménko.
+\subsubsection{infix} \label{infix}
+Funkce inicializuje vypsání infixového tvaru výrazu. To je zajištěno tím, že vypíše nejdříve levou větev (\textit{vypisL} viz strana \pageref{vL}.) a následně pravou (\textit{vypisR} viz strana \pageref{vR}.). Mezi ně je vypsáno znaménko.
 
-\subsubsection{vypisL}
+\subsubsection{vypisL} \label{vL}
 Pokud je v hlavě (ta je předána v argumentu) znaménko, zavolá se funkce \textit{vypisL}, poté se vypíše znaménko v hlavě a následně se volá funkce \textit{vypisR}. 
 
 Je-li v hlavě uloženo číslo, vypíše se začátek závorky a následně toto číslo. 
 
-\subsubsection{vypisR}
+\subsubsection{vypisR} \label{vR}
 Pokud je v hlavě (ta je předána v argumentu) znaménko, zavolá se funkce \textit{vypisL}, poté se vypíše znaménko v hlavě a následně se volá funkce \textit{vypisR}. 
 
 Je-li v hlavě uloženo číslo, vypíše se toto číslo a následně konec závorky.
 
 \section{Dokumentace neprocedurálního programu}
-
-
+\subsection{Vývoj a editace}
+Program byl vyvíjen v jazyce Haskell na platformě linux, jako vývojové prostředí jsme zvolili Atom. Hlavním důvodem bylo to, že existuje velké množství doplňků, které například zvýrazňují syntax Haskellu. Další nástroj, který je nutný pro kompilaci programu, je \textit{stack}. Který je dostupný z oficiálních stránek Haskellu \cite{stack}, ten obsahuje nástroj pro vytváření projektů, je schopen automaticky stahovat velké množství knihoven a navíc již sám o sobě obsahuje nejpoužívanější knihovny.   
 
 
 \section{Srovnání}
@@ -312,6 +312,8 @@ Miran Lipovača, 2011. learnyouahaskell.com: So what's Haskell? [online]. [cit. 
 Kolektiv autorů, 2018. Wikipedia.org: Prefix [online]. Poslední změna 8.8.2018 [cit. 1.12.2018]. Dostupné z: \url{https://cs.wikipedia.org/wiki/Prefixov%C3%A1_notace}
 \bibitem{výrazy}
 Nik1996 a Shrikanth13, 2013. geekforgeeks.org: Expression Evaluation [online].  [cit. 19.12.2018]. Dostupné z: \url{https://www.geeksforgeeks.org/expression-evaluation}
+\bibitem{stack}
+Happy: The Parser Generator for Haskell, 2018. haskell.org: Downloads [online].  [cit. 18.2.2019]. Dostupné z: \url{https://www.haskell.org/downloads}
 \end{thebibliography}
 
 
@@ -324,7 +326,7 @@ Nik1996 a Shrikanth13, 2013. geekforgeeks.org: Expression Evaluation [online].  
 
 \item \textbf{Git repositář neimperativního programu:}
 
-\url{} 
+\url{https://github.com/Zizkai/funkcionalni_programovani_neimperativni_program} 
 \end{enumerate}
 
 \openright

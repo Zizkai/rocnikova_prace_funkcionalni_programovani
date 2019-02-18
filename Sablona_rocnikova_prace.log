@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.26)  17 FEB 2019 20:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.26)  18 FEB 2019 22:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -478,7 +478,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 210--218
 [11
 
 ]
-<expression-tree.png, id=251, 433.62pt x 533.995pt>
+<expression-tree.png, id=256, 433.62pt x 533.995pt>
 File: expression-tree.png Graphic file (type png)
 <use expression-tree.png>
 Package pdftex.def Info: expression-tree.png  used on input line 221.
@@ -492,44 +492,43 @@ Kapitola 5.
 [17
 
 ]
-Underfull \hbox (badness 1859) in paragraph at lines 299--300
+Underfull \hbox (badness 1859) in paragraph at lines 302--303
 \T1/cmr/m/n/12 zm¥na 1.12.2018 [cit. 2.1.2019]. Do-stupné z: []$\T1/cmtt/m/n/12
  https : / / cs . wikipedia . org / wiki /
  []
 
 
-Underfull \hbox (badness 2005) in paragraph at lines 301--302
+Underfull \hbox (badness 2005) in paragraph at lines 304--305
 []\T1/cmr/m/n/12 Kolektiv au-tor·, 2018. Wi-ki-pe-dia.org: Lambda kal-kul [on-l
 ine]. Po-slední zm¥na
  []
 
 [18
 
-] [19
+]
+Overfull \hbox (10.56918pt too wide) in paragraph at lines 329--330
+[][]$\T1/cmtt/m/n/12 https : / / github . com / Zizkai / funkcionalni _ program
+ovani _ neimperativni _ program$[] |
+ []
+
+[19
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 328.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 328.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 333.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 333.
  (./Sablona_rocnikova_prace.aux (./_titulni_strana.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 328.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 328.
-
-
-Package rerunfilecheck Warning: File `Sablona_rocnikova_prace.out' has changed.
-
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Sablona_rocnikova_prace.out':
-(rerunfilecheck)             Before: 4C4A162677FCBB9790106665A960EF71;3324
-(rerunfilecheck)             After:  9300ECBA82B7CEA3EF92BCC9498B97A9;3324.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 328.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 333.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 333.
+Package rerunfilecheck Info: File `Sablona_rocnikova_prace.out' has not changed
+.
+(rerunfilecheck)             Checksum: 1D19D3C0C642BCDF8207EBD9C0755FA6;3470.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 333.
  ) 
 Here is how much of TeX's memory you used:
- 13042 strings out of 492616
- 184628 string characters out of 6132767
- 447867 words of memory out of 5000000
- 16722 multiletter control sequences out of 15000+600000
+ 13053 strings out of 492616
+ 184710 string characters out of 6132767
+ 448209 words of memory out of 5000000
+ 16732 multiletter control sequences out of 15000+600000
  13547 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,6n,51p,1414b,1525s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -538,9 +537,6 @@ exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{cite.voln\351\040a\040v\341zan\351} has been refere
 nced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter*.16} has been referenced but does not exist
-, replaced by a fixed one
 
 {c:/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texliv
 e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2018/te
@@ -553,10 +549,10 @@ bx1728.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb
 ve/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2018/te
 xmf-dist/fonts/type1/public/cm-super/sfti1200.pfb><c:/texlive/2018/texmf-dist/f
 onts/type1/public/cm-super/sftt1200.pfb>
-Output written on Sablona_rocnikova_prace.pdf (20 pages, 259370 bytes).
+Output written on Sablona_rocnikova_prace.pdf (20 pages, 260461 bytes).
 PDF statistics:
- 384 PDF objects out of 1000 (max. 8388607)
- 344 compressed objects within 4 object streams
- 118 named destinations out of 1000 (max. 500000)
- 198 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 399 PDF objects out of 1000 (max. 8388607)
+ 359 compressed objects within 4 object streams
+ 119 named destinations out of 1000 (max. 500000)
+ 206 words of extra memory for PDF output out of 10000 (max. 10000000)
 

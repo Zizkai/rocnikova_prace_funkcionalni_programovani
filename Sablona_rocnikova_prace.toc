@@ -32,6 +32,7 @@
 \contentsline {subsubsection}{vypisL}{16}{section*.15}% 
 \contentsline {subsubsection}{vypisR}{16}{section*.16}% 
 \contentsline {section}{\numberline {4.2}Dokumentace neprocedur\IeC {\'a}ln\IeC {\'\i }ho programu}{16}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}V\IeC {\'y}voj a editace}{16}{subsection.4.2.1}% 
 \contentsline {section}{\numberline {4.3}Srovn\IeC {\'a}n\IeC {\'\i }}{16}{section.4.3}% 
 \contentsline {chapter}{\numberline {5}Z\IeC {\'a}v\IeC {\v e}r}{17}{chapter.5}% 
 \contentsline {chapter}{Literatura}{18}{chapter*.17}% 
