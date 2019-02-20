@@ -26,7 +26,7 @@
 % Seminář ve kterém práce vznikla
 \def\Seminar{Seminář z programování}
 % Datum dokončení práce
-\def\DatumDokonceni{27.2.2019}
+\def\DatumDokonceni{22.2.2019}
 \renewcommand\lstlistingname{}
 
 %% Definice různých užitečných maker (viz popis uvnitř souboru)
@@ -41,7 +41,7 @@
 \tableofcontents
 
 \chapter{Úvod}
-Cílem práce je vytvořit dva programy s identickou funkcí, ale každý vytvořený v jiném programovacím jazyce a zcela jinou metodou. Oba programy budou převádět prefixový zápis na infixový, s tím že první z těchto dvou bude tvořen procedurálně a to v jazyce C. Druhý program bude tvořen v čistě funkcionálním programovacím jazyce Haskell. Hlavním cílem srovnat odlišné styly programování a zároveň ukázat výhody a nevýhody funkcionálních programovacích jazyků. 
+Cílem práce je vytvořit dva programy s identickou funkcí, ale každý vytvořený v jiném programovacím jazyce a zcela jinou metodou. Oba programy budou převádět prefixový zápis na infixový s tím ,že první z~těchto dvou bude tvořen procedurálně a~to v~jazyce C. Druhý program bude tvořen v čistě funkcionálním programovacím jazyce Haskell. Hlavním cílem je srovnat odlišné styly programování a zároveň ukázat výhody a nevýhody funkcionálních programovacích jazyků. 
 
 \chapter{Teorie funkcionálního programování} % NÁZVY KAPITOL NEJVYŠŠÍ ÚROVNĚ
 
@@ -50,18 +50,19 @@ Cílem práce je vytvořit dva programy s identickou funkcí, ale každý vytvo�
 
 Lambda kalkul je čistě teoretický model, ale i tak na něm staví většina čistě funkcionálních programovacích jazyků. Lambda kalkul analyzuje funkci a nikoliv z hlediska původního matematického smyslu zobrazení z množiny, ale jako metodu výpočtu. \cite{lambda kalkul wiki.} Lambda kalkul tvoří páteř takzvaných Turingových strojů. Občas je označována jako univerzální matematický programovací jazyk.
 
-Prvním jazykem, který obsahoval funkcionální část, byl LISP, který byl vytvořen pro potřeby IBM v 50. letech minulého století. LISP se do dnes vyučuje na většině vysokých škol v USA, které se zaměřují na studium informatiky, a je brán za jednu z nejdůležitějších schopností každého absolventa takovéto vysoké školy. Prvním čistě funkcionálním programovacím jazykem byla Miranda, tento jazyk byl vyvinut Davidem Turnerem. Byl komerčně podporován a snažil se odpoutat od závislosti na jiných programovacích jazycích. Krátce po vydání jazyku Miranda, proběhla světová konference o funkcionálním programování, ze které vzešel požadavek na standardizaci funkcionálních programovacích jazyků. Z tohoto důvodu byla sestavena speciální komise, která vyprodukovala čistě funkcionální programovací jazyk Haskell. 
+Prvním jazykem, který obsahoval funkcionální část byl LISP, který byl vytvořen pro potřeby IBM v 50. letech minulého století. LISP se dodnes vyučuje na většině vysokých škol v~USA, které se zaměřují na studium informatiky, a je brán za jednu z nejdůležitějších schopností každého absolventa takovéto vysoké školy. Prvním čistě funkcionálním programovacím jazykem byla Miranda, tento jazyk byl vyvinut Davidem Turnerem. Byl komerčně podporován a snažil se odpoutat od závislosti na jiných programovacích jazycích. Krátce po vydání jazyku Miranda, proběhla světová konference o funkcionálním programování, ze které vzešel požadavek na standardizaci funkcionálních programovacích jazyků. \cite{Funk. prog. wiki.} Z tohoto důvodu byla sestavena speciální komise, která vyprodukovala čistě funkcionální programovací jazyk Haskell. 
 
 \section{Funkcionální programování}
-Funkcionální programování se spíše než klasickým programovacím jazykům podobá matematickému zápisu funkce. Hlavním princip je založen na zápisu programu ve tvaru výrazu. Ten je následně zjednodušován až do takové míry, kdy už nelze být zjednodušen. Tento tvar je výsledkem tohoto výrazu. \newline
+Funkcionální programování se spíše než klasickým programovacím jazykům podobá matematickému zápisu funkce. Hlavní princip je založen na zápisu programu ve tvaru výrazu. Ten je následně zjednodušován až do takové míry, kdy už nelze být zjednodušen. Tento tvar je výsledkem tohoto výrazu. \newline
 Příklad: \newline
 $(2 * 5)$ Tento výraz není nic jiného než funkce násobení (ta vyžaduje dva argumenty, které mezi sebou vynásobí), jehož výsledkem je číslo 10. Číslo 10 nelze dále zjednodušit a proto považujeme tento výraz za výsledek. 
 
 Program lze, a dokonce je to vyžadováno, dělit do funkcí. V deklarativním programování mohou funkce přijímat jako argument jiné funkce. To zajišťuje plynulost a absenci pomocných proměnných. Funkce často obsahují jen několik řádků kódu. Zajímavou vlastností funkcionálních jazyků je pohled na funkce jako takové. Ty jsou chápány jako proměnné v imperativních programovacích jazycích. Například v jazyku C, pokud nebereme v potaz ukazatele, je zcela nemyslitelné vytvořit pole funkcí. Na druhou stranu ve funkcionálním programovaní je tato myšlenka naprosto validní a uskutečnitelná.  
+
 \subsection{Rozdíl mezi funkcionálním a imperativním programováním}
 Základní jednotkou funkcionálních jazyků je výraz. Ten se dále zjednodušuje až do té doby, kdy ho nelze dále zjednodušit. 
 
-Na druhou stranu u imperativních jazyků je základní jednotkou příkaz. Rozdílem je, že tyto příkazy nemají obvykle argument (hodnotu). Proto způsobem, jakým si příkazy vyměňují data, musí být skrze proměnnou. Proměnnou se rozumí stavový vektor, který lze v~průběhu běhu programu měnit, hodnota vektoru je dána během programu. Existencí stavů vznikají jeden závažný důsledek.
+Na druhou stranu u imperativních jazyků je základní jednotkou příkaz. Rozdílem je, že tyto příkazy nemají obvykle argument (hodnotu). Proto způsobem, jakým si příkazy vyměňují data, musí být skrze proměnnou. Proměnnou se rozumí stavový vektor, který lze v~průběhu běhu programu měnit, hodnota vektoru je dána během programu. Existencí stavů vzniká jeden závažný důsledek.
 \newline
 \newline
 Příklad:\newline
@@ -88,7 +89,7 @@ sum :: Int -> Int
 sum n = if n == 1 then 1 else n + sum (n - 1)
 \end{lstlisting} 
 
-
+\newpage
 Na tomto příkladu můžeme vidět, že \textit{n} bude v určitém kontextu existovat jen jedno a~bude neměnné. I~kdybychom chtěli v~průběhu programu změnit hodnotu \textit{n}, tak nemůžeme. Deklarativní jazyky nemají prostředek, který by jim tuto manipulaci zajistil. Mohli bychom namítnout, že při vynořování z funkce $sum$ se mění hodnota proměnné \textit{n}. Opak je ale pravdou, ve funkci $sum$ existuje vždy jen jedno konkrétní \textit{n}, které má s předchozím n společný jen název, ale jeho hodnota je jiná.
 
 Zajímavou vlastností imperativních jazyků je například to, že v nich můžeme simulovat podobné procesy jako v deklarativních jazycích. \newline
@@ -109,15 +110,16 @@ return souc;
 I když je tato funkce napsána v imperativním jazyce, tak v ní probíhá stejná posloupnost akcí jako u příkladu s funkcionálním jazykem. Nefunkcionální jazyky mají prostředky, kterými lze simulovat chování funkcionálních jazyků, ale ne všechny funkce se takto dají simulovat. 
 
 Deklarativní jazyky neznají pojem proměnné ani přiřazení do ní. Proměnné mohou být pouze vázány na argumenty funkcí. To znamená, že argumentem funkce $sum$ může být výraz: $(5 + 7)$ ten je následně vázán na argument funkce \textit{n}. Z tohoto důvodu můžeme říci, že $n = 5 + 7$, ale nejedná se v tomto případě o proměnnou. Vazbě na argument funkce se říká prostředí. V některých případech může absence stavových vektorů vest ke zkrácení řešení určitého problému.
+
 \subsection{Lambda kalkul}
 Základní prvky tohoto univerzálního matematického jazyka jsou tři: proměnná, aplikace a abstrakce. Proměnná je název pro hodnotu, kterou nelze blíže specifikovat. Jsou označeny identifikátory, často to jsou písmena abecedy. %[citace - http://www.cs.vsb.cz/navrat/vyuka/flp/texty/fp/ch02.html 
 Abstrakce, je definice funkce. Zapsání takovéto abstrakce si lze nejlépe představit na příkladu: $f(x) = x - 5$, tuto funkci můžeme také zapsat pomocí lambda kalkulu $\lambda x.x - 5 $. \cite{volné a vázané} Výraz (proměnná) mezi $\lambda$ a \textit{.} je parametr funkce, parametrů může být i více, ale v tomto případě máme jen jeden. Výraz za tečkou značí definici funkce (tělo). 
 
-Problém nastává, když máme právě více parametrů než jeden. Jelikož lambda kalkul dokáže operovat pouze s~jednou. I tento problém je jednoduše řešitelný, například funkci o~dvou parametrech, která má předpis: $g(x,y) = x * y$  můžeme zcela beztrestně přepsat takto: $\lambda x. \lambda y. x * y $ tento zápis je možno zkrátit na: $\lambda x \; y.\ x * y $. Aplikace, toto je výraz pro volání funkce - $f(x) = x - 5$. Například funkci \textit{f} zavoláme s parametrem $5$, čili se za proměnnou \textit{x} dosadí číslo $5$. Výsledkem této funkce bude $0$. Když se koukneme na volání funkce z blízka, tak zjistíme že nejdříve je volána funkce \textit{f} a následně argument $5$. Tento postup se též dá zapsat jako $(\lambda x.x - 5) \;5$  
+Problém nastává, když máme právě více parametrů než jeden. Jelikož lambda kalkul dokáže operovat pouze s~jednou. I tento problém je jednoduše řešitelný, například funkci o~dvou parametrech, která má předpis: $g(x,y) = x * y$  můžeme zcela beztrestně přepsat takto: $\lambda x. \lambda y. x * y $ tento zápis je možno zkrátit na: $\lambda x \; y.\ x * y $. Aplikace, toto je výraz pro volání funkce - $f(x) = x - 5$. Například funkci \textit{f} zavoláme s parametrem $5$, čili se za proměnnou \textit{x} dosadí číslo $5$. Výsledkem této funkce bude $0$. Když se koukneme na volání funkce z blízka, tak zjistíme ,že nejdříve je volána funkce \textit{f} a následně argument $5$. Tento postup se též dá zapsat jako $(\lambda x.x - 5) \;5$  
 
 Často se tyto tři pojmy schovají za značení \textit{E}. 
 \subsubsection{Vázané a volné proměnné}
-Proměnná je v $\lambda$-výrazu vázaná, pokud se jedná o parametr nějaké funkce, takže např. ve výrazu $ (\; \lambda x . \; y\; x\; )$ je \textit{x} vázaná proměnná. \cite{volné a vázané} Protikladem k~vázané proměnné je volná, například: $(\; \lambda x . \; y\; x\; )$. Zde je \textit{y} volnou proměnnou. Obecně řečeno proměnná se vždy váže k~nejbližší lambdě ~k~ní vlevo. V~lambda výrazech je nutno respektovat závorky, ty určují nejen oddělení parametru, ale také říkají, ke které lambdě se proměnná bude vázat. To si lze jednoduše představit na příkladu: $ ( \; \lambda x . \; (\lambda x .\; x - 2)\; z\; ) $~, kde \textit{x} je proměnná vázaná a~\textit{z}~proměnnou volnou. Taktéž \textit{x} se váže~k~$\lambda$ které je v~závorce s~ním. 
+Proměnná je v $\lambda$-výrazu vázaná, pokud se jedná o parametr nějaké funkce, takže např. ve výrazu $ (\; \lambda x . \; y\; x\; )$ je \textit{x} vázaná proměnná. \cite{volné a vázané} Protikladem k~vázané proměnné je volná, například: $(\; \lambda x . \; y\; x\; )$. Zde je \textit{y} volnou proměnnou. Obecně řečeno proměnná se vždy váže k~nejbližší lambdě ~k~ní vlevo. V~lambda výrazech je nutno respektovat závorky, ty určují nejen oddělení parametru, ale také říkají, ke které lambdě se proměnná bude vázat. To si lze jednoduše představit na příkladu: $ ( \; \lambda x . \; (\lambda x .\; x - 2)\; z\; ) $~, kde \textit{x} je proměnná vázaná a~\textit{z}~proměnnou volnou. Taktéž \textit{x} se váže~k~$\lambda$, které je v~závorce s~ním. 
 
 \subsection{Higher-order funkce}
 Tímto pojmem se označují takové funkce, které splňují alespoň jednu ze dvou podmínek:
@@ -130,7 +132,7 @@ Příklad, který je nám blízký, můžeme nalézt v matematice a to u funkcí
 Příkladem takovéto funkce může být (v Haskellu) funkce $ map $, která vyžaduje dva argumenty, z níž je jeden funkce \textit{f} a druhý list \textit{l}. Výsledkem je list, na který byla aplikována funkce \textit{f}.
 \newpage
 \subsection{Vedlejší efekty}
-Nastávají tehdy, kdy funkce funkce během výpočtu mění stav procesu, než je návratová hodnota funkce. Vedlejší efekty jsou častým zdrojem chyb v kódu, na druhou stranu může správně použitý vedlejší efekt usnadnit implementaci kódu. 
+Nastávají tehdy, kdy funkce během výpočtu mění stav procesu, než je návratová hodnota funkce. Vedlejší efekty jsou častým zdrojem chyb v kódu, na druhou stranu může správně použitý vedlejší efekt usnadnit implementaci kódu. 
 
 Příkladem neúmyslného vedlejšího efektu může být toto:
 \begin{lstlisting}[caption={jazyk C}, captionpos=b, language = C]	
@@ -155,9 +157,9 @@ Obecně se může říci, že za vedlejší efekty můžeme považovat změnu ho
 \subsection{Monády}
 Monády jsou druhem abstrakce datového konstruktoru (type class), tyto konstruktory uzavírají určitou část logiky programu. Monády umožňují programátorovi vytvářet složité funkce, tím je myšleno řetězení funkcí. V minimalistickém principu jde o programovou strukturu, která umožňuje určitý výpočet. Monády jsou často zaváděny z důvodu toho, aby se předešlo vedlejším efektům funkcí. 
 
-Čistě obecně jde o konstrukci na úrovni teorie kategorií. Důležité je zmínit, že monády jsou často použity v kódu, aniž bychom si to uvědomovali. Jedno z takových to použití je řešení vstupu a výstupu programu, například do konzole. Myšlenka za touto funkcí je taková, že funkci IO je předáván stav programu jako argument (stav = momentální vyhodnocení výrazu programem). IO následně například vypíše daný výsledek do konzole. Mohlo by se zdát, že se jedná o jakési implementování vlastností z imperativních programovacích jazyků. Není tomu tak vždy, jen v kontextu IO se tato představa nabízí. Monády jsou zárukou toho, že je zachována čistá funkcionalita jazyka bez vedlejších efektů, ale zároveň nám umožňují využívat vlastností, které mají vedlejší efekty. 
+Čistě obecně jde o konstrukci na úrovni teorie kategorií. Důležité je zmínit, že monády jsou často použity v kódu, aniž bychom si to uvědomovali. Jedno z takových užití je řešení vstupu a výstupu programu, například do konzole. Myšlenka za touto funkcí je taková, že funkci IO je předáván stav programu jako argument (stav = momentální vyhodnocení výrazu programem). IO následně například vypíše daný výsledek do konzole. Mohlo by se zdát, že se jedná o jakési implementování vlastností z imperativních programovacích jazyků. Není tomu tak vždy, jen v kontextu IO se tato představa nabízí. Monády jsou zárukou toho, že je zachována čistá funkcionalita jazyka bez vedlejších efektů, ale zároveň nám umožňují využívat vlastností, které mají vedlejší efekty. 
 
-Třída monád, podporuje dva operátory jeden z nich je operátor \texttt{bind} ten se značí $ (>>=) $ a druhou \texttt{return} ten vrací monádu. 
+Třída monád, podporuje dva operátory jeden z nich je operátor \texttt{bind}, ten se značí $ (>>=) $ a druhou \texttt{return} ten vrací monádu. 
 \subsubsection{IO - vstup a výstup}
 Touto funkcí se rozumí monadická funkce, která může být použita různými způsoby. Prvním z nich je IO s datovým typem například: \textit{IO Char}. Druhým způsobem použití může být \textit{IO()} takto definovaná funkce nevrací žádnou hodnotu. Práce ve funkci, která je definována pomocí \textit{IO()}, musí probíhat až za klíčovým slovem \textit{do}. Toho se dá využít například při načítání ze souboru nebo vypisování do konzole.  
 
@@ -178,10 +180,10 @@ I list, který je jedním z nejpoužívanějších vlastností Haskllu, je moná
 return x = [x]
 xs >>= f = concatMap f xs 
 \end{lstlisting}
-Když by byl zadán jen jeden prvek, funkce \textit{return} vrátí jednoprvkový list. Další řádek definice je o trošku zajímavější, tento kus definice se stará o to, aby všechny prvky byly vypsány v~listu. Toho je docíleno, tak že na každý prvek je volána funkce \textit{f} a~následně funkcí \textit{concat} jsou všechny prvky sloučeny do jednoho listu.  
+Když by byl zadán jen jeden prvek, funkce \textit{return} vrátí jednoprvkový list. Další řádek definice je o trošku zajímavější, tento kus definice se stará o to, aby všechny prvky byly vypsány v~listu. Toho je docíleno tak, že na každý prvek je volána funkce \textit{f} a~následně funkcí \textit{concat} jsou všechny prvky sloučeny do jednoho listu.  
 
 \section{Haskell}
-Tento programovací jazyk řadíme do kategorie jazyků s líným vyhodnocováním.\cite{haskell} Což znamená, že program vyhodnotí funkci nebo výraz jen v tom případě, že je nutná k dosažení konečného výsledku. Haskell také pečlivě lpí na mezerách, které mají syntaktický význam. Existují dva hlavní kompilátory pro Haskell, prvním z nich je Hugs -- v dnešní době se již moc nepoužívá. Druhým, ale daleko významnějším kompilátorem je GHC = Glasgow Haskell Compiler. Tento kompilátor je multiplatformní a velmi dobře aktualizován. Operátory funkcí se chovají stejně jako v matematice, existuje zde několik možných zápisů. Prvním z nich je infixový tvar [8 `mod` 2 -- ukázka infixu], který je nutné ohraničit zpětným apostrofem. Dalším způsobem je prefixový tvar [ mod 8 2 -- ukázka prefixu], zde si lze lépe představit, že funkci \textbf{mod} jsou předány dva argumenty (8 a 2). Volba zápisu je samozřejmě možná i~u~základních operací jako jsou například sčítaní nebo odčítání. Haskell dokáže velice dobře vyhodnocovat prioritu operací, také platí, že volání funkce má přednost před operací. Prioritu operací můžeme upravovat pomocí závorek. Syntax tohoto programovacího jazyka je velice striktní v~pojmenovávání funkcí, proměnných a~datových typů:
+Tento programovací jazyk řadíme do kategorie jazyků s líným vyhodnocováním.\cite{haskell} Což znamená, že program vyhodnotí funkci nebo výraz jen v tom případě, že je nutná k dosažení konečného výsledku. Haskell také pečlivě lpí na mezerách, které mají syntaktický význam. Existují dva hlavní kompilátory pro Haskell, prvním z nich je Hugs -- v dnešní době se již moc nepoužívá. Druhým, ale daleko významnějším kompilátorem je GHC = Glasgow Haskell Compiler. Tento kompilátor je multiplatformní a velmi dobře aktualizován. Operátory funkcí se chovají stejně jako v matematice, existuje zde několik možných zápisů. Prvním z nich je infixový tvar [ 8 `mod` 2 -- ukázka infixu ], který je nutné ohraničit zpětným apostrofem. Dalším způsobem je prefixový tvar [ mod 8 2 -- ukázka prefixu ], zde si lze lépe představit, že funkci \textbf{mod} jsou předány dva argumenty ( 8 a 2 ). Volba zápisu je samozřejmě možná i~u~základních operací jako jsou například sčítaní nebo odčítání. Haskell dokáže velice dobře vyhodnocovat prioritu operací, také platí, že volání funkce má přednost před operací. Prioritu operací můžeme upravovat pomocí závorek. Syntax tohoto programovacího jazyka je velice striktní v~pojmenovávání funkcí, proměnných a~datových typů:
 \begin{itemize}
 \item funkce se značí malými písmeny 
 \item datové typy se značí prvním velkým písmenem (např: String, Char)
@@ -214,7 +216,7 @@ vyplývá nutnost používání závorek, když chybí závorky je priorita oper
 \newline
 Teorie převedení výrazu zapsaného v infixové podobě: 
 \newline
-Strom je tvořen pouze operátory a operandy. V první fázi, musí program najít operaci s~nejnižší prioritou, při tomto procesu musí respektovat pořadí operandů, ale také rozmístění závorek. Když takovou operaci nalezne, stává se toto znaménko s nejnižší prioritou dělící čarou, která rozděluje výraz na dvě podmnožiny. Stejná funkce je zavolána na obě vzniklé části a~celý proces pokračuje, dokud nezůstane jen jedna operace mezi dvěma operandy. Strom je stavěn rekurzivně, s~ tím že se do každého otce (pokud má syny) je uloženo znaménko (operátor). Do otců, které nemají žádné syny jsou uloženy operandy. Ukázka stromu pro výraz $\;\;3\;+\;(\;(\;5\;+\;9\;)\;*\;2\;)\;\;$ je vidět v následujícím obrázku (Binární strom).
+Strom je tvořen pouze operátory a operandy. V první fázi, musí program najít operaci s~nejnižší prioritou, při tomto procesu musí respektovat pořadí operandů, ale také rozmístění závorek. Když takovou operaci nalezne, stává se toto znaménko s nejnižší prioritou dělící čarou, která rozděluje výraz na dvě podmnožiny. Stejná funkce je zavolána na obě vzniklé části a~celý proces pokračuje, dokud nezůstane jen jedna operace mezi dvěma operandy. Strom je stavěn rekurzivně s~tím, že se do každého otce (pokud má syny) je uloženo znaménko (operátor). Do otců, které nemají žádné syny jsou uloženy operandy. Ukázka stromu pro výraz $\;\;3\;+\;(\;(\;5\;+\;9\;)\;*\;2\;)\;\;$ je vidět v následujícím obrázku (Binární strom).
 
 \begin{figure}[h]
     \centering
@@ -229,7 +231,7 @@ Převod notací z binárního stromu je velice jednoduchá záležitost, závis�
 \textbf{Převod z infixu na postfix:} \newline
 Za pomocí rekurze se vypíše nejdříve levý syn, následně pravý syn a nakonec otec těchto synů.\newline
 \textbf{Převod z infixu na prefix:} \newline
-Za pomocí rekurze se vypíše nejdříve otec, následně levý syn a nakonec pravý syn. Jelikož v~tomto typu zápisu nejsou vyžadovány závorky je takto vzniklý výraz validní.\newline
+Za pomocí rekurze se vypíše nejdříve otec, následně levý syn a nakonec pravý syn. Jelikož v~tomto typu zápisu nejsou vyžadovány závorky, je takto vzniklý výraz validní.\newline
 \textbf{Převod z binárního stromu zpět na infixový zápis:}\newline
 Opět za pomoci rekurze vypíšeme vždy nejdříve levého syna, následně otce a poté pravého syna. Před každým vypsáním levého syna vypíšeme závorku a po každém vypsání pravého syna ukončíme tuto závorku. Tím nám vznikne původní výraz, který bude obsahovat více závorek nežli původní, ale výsledek výrazu zůstane nezměněn. 
 
@@ -238,16 +240,19 @@ Oba níže popsané programy mají stejnou funkci, převádějí prefixovou nota
 \subsection*{Získání zdrojového kódu}
 Existují dvě cesty jak lze získat zdrojový kód. První možností je přistoupit na url adresu (viz. příloha ), zde kliknout na tlačítko \textit{Clone or download}, a následně vybrat možnost \textit{Download ZIP}. Tento soubor je poté nutno extrahovat. 
 
-Druhou možností je využití nástroje \textit{Git}. Zde je opět nutné přejít na url adresu (viz. příloha), zde kliknout na tlačítko \textit{Clone or download} a následně zkopírovat odkaz, který se nachází v nově vzniklém boxu. Poté je nutné se přesunout do vašeho počítače ve kterém je nainstalován program \textit{Git}. Otevřít konzoli Git (\textit{Git Bash}), zde je nutné se navigovat do složky, kam chcete uložit repositář, a~poté užít příkaz \textit{git clone (adresa kterou jsme si již dříve zkopírovali)}.
+Druhou možností je využití nástroje \textit{Git}. Zde je opět nutné přejít na url adresu (viz. příloha), zde kliknout na tlačítko \textit{Clone or download} a následně zkopírovat odkaz, který se nachází v nově vzniklém boxu. Poté je nutné se přesunout do vašeho počítače, ve kterém je nainstalován program \textit{Git}. Otevřít konzoli Git (\textit{Git Bash}), zde je nutné se navigovat do složky, kam chcete uložit repositář, a~poté užít příkaz \textit{git clone (adresa, kterou jsme si již dříve zkopírovali)}.
 
 V tuto chvíli máte přístup ke zdrojovému kódu jednotlivých programů.   
+
 \section{Dokumentace procedurálního programu}
+
 \subsection{Vývoj a editace}
 Program byl vyvíjen v nástroji \textit{Code Blocks}, v repositáři se nachází nastavený projekt. Editace vstupu probíhá přímo v~kódu, v~souboru \textit{main.c}. Rozhodli jsme se zvolit tento, ne až tak praktický způsob, jelikož jsme chtěli primárně ukázat rozdíl mezi imperativním a~neimperativním způsobem programování. 
+
 \subsection{Princip fungování}
 Program vezme vstup, který mu zadal uživatel (modifikoval pole \textit{vstupniData}), převede ho do pole datového typu \textit{prefix}. Datový typ prefix obsahuje dvě proměnné z~nichž první je znak a~druhá číslo. Pokud je zadáno číslo, znak má nastavenou hodnotu na \textit{NULL}. Tento výše popsaný proces se děje pomocí funkce \textit{poleDoPrefix} (viz strana \pageref{pDP}.).
 
-Ve funkci \textit{main} je následně vytvořena hlava stromu (datový typ \textit{strom}) a její všechny části jsou nastaveny na \textit{NULL}. Poté je volána funkce \textit{UkladaniDoStromu} (viz strana \pageref{UDS}.), která zajišťuje inicializaci stavby stromu.
+Ve funkci \textit{main} je následně vytvořena hlava stromu (datový typ \textit{strom}) a její všechny části jsou nastaveny na \textit{NULL}. Poté je volána funkce \textit{UkladaniDoStromu} (viz strana \pageref{UDS}.),~která zajišťuje inicializaci stavby stromu.
 
 Po ukončení stavby stromu je zavolána funkce \textit{infix} (viz strana \pageref{infix}.), která vypíše do konzole infixový tvar. 
 
@@ -287,13 +292,16 @@ Je-li v hlavě uloženo číslo, vypíše se toto číslo a následně konec zá
 
 \section{Dokumentace neprocedurálního programu}
 \subsection{Vývoj a editace}
-Program byl vyvíjen v jazyce Haskell na platformě linux, jako vývojové prostředí jsme zvolili Atom. Hlavním důvodem bylo to, že existuje velké množství doplňků, které například zvýrazňují syntax Haskellu. Další nástroj, který je nutný pro kompilaci programu, je \textit{stack}. Který je dostupný z oficiálních stránek Haskellu \cite{stack}, ten obsahuje nástroj pro vytváření projektů, je schopen automaticky stahovat velké množství knihoven a navíc již sám o sobě obsahuje nejpoužívanější knihovny.   
+Program byl vyvíjen v jazyce Haskell na platformě linux, jako vývojové prostředí jsme zvolili Atom. Hlavním důvodem bylo to, že existuje velké množství doplňků, které například zvýrazňují syntax Haskellu. Další nástroj, který je nutný pro kompilaci programu, je \textit{stack}. Který je dostupný z oficiálních stránek Haskellu \cite{stack}, ten obsahuje nástroj pro vytváření projektů, je schopen automaticky stahovat velké množství knihoven a navíc již sám o sobě obsahuje nejpoužívanější knihovny.
+ 
+Editace je možná přímo v souboru \textit{main.hs}, proč tomu tak je jsme již vysvětlili.  
+
 
 
 \section{Srovnání}
 
 \chapter{Závěr}
-****** 4546546 
+
 
 %%% Seznam použité literatury
 \begin{thebibliography}{99}

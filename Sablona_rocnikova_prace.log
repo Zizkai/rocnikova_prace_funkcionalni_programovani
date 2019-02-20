@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.26)  18 FEB 2019 22:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.26)  20 FEB 2019 20:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -437,17 +437,17 @@ File: lstlang1.sty 2018/09/02 1.7 listings language file
 (c:/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 64--69
+Underfull \hbox (badness 10000) in paragraph at lines 65--70
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--69
+Underfull \hbox (badness 10000) in paragraph at lines 65--70
 
  []
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 69.
+nput line 70.
 (c:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 )
@@ -455,33 +455,33 @@ File: lstlang1.sty 2018/09/02 1.7 listings language file
 File: lstlang2.sty 2018/09/02 1.7 listings language file
 ) [5] [6] [7]
 [8]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 160.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 162.
 
  (c:/texlive/2018/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) [9]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 186.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 188.
 
 
 (c:/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 186.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 188.
  [10]
 Kapitola 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--218
+Underfull \hbox (badness 10000) in paragraph at lines 212--220
 
  []
 
 [11
 
 ]
-<expression-tree.png, id=256, 433.62pt x 533.995pt>
+<expression-tree.png, id=257, 433.62pt x 533.995pt>
 File: expression-tree.png Graphic file (type png)
 <use expression-tree.png>
-Package pdftex.def Info: expression-tree.png  used on input line 221.
+Package pdftex.def Info: expression-tree.png  used on input line 223.
 (pdftex.def)             Requested size: 173.44492pt x 213.59421pt.
  [12 <./expression-tree.png>] [13]
 Kapitola 4.
@@ -492,13 +492,13 @@ Kapitola 5.
 [17
 
 ]
-Underfull \hbox (badness 1859) in paragraph at lines 302--303
+Underfull \hbox (badness 1859) in paragraph at lines 310--311
 \T1/cmr/m/n/12 zm¥na 1.12.2018 [cit. 2.1.2019]. Do-stupné z: []$\T1/cmtt/m/n/12
  https : / / cs . wikipedia . org / wiki /
  []
 
 
-Underfull \hbox (badness 2005) in paragraph at lines 304--305
+Underfull \hbox (badness 2005) in paragraph at lines 312--313
 []\T1/cmr/m/n/12 Kolektiv au-tor·, 2018. Wi-ki-pe-dia.org: Lambda kal-kul [on-l
 ine]. Po-slední zm¥na
  []
@@ -506,7 +506,7 @@ ine]. Po-slední zm¥na
 [18
 
 ]
-Overfull \hbox (10.56918pt too wide) in paragraph at lines 329--330
+Overfull \hbox (10.56918pt too wide) in paragraph at lines 337--338
 [][]$\T1/cmtt/m/n/12 https : / / github . com / Zizkai / funkcionalni _ program
 ovani _ neimperativni _ program$[] |
  []
@@ -514,24 +514,24 @@ ovani _ neimperativni _ program$[] |
 [19
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 333.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 333.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 341.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 341.
  (./Sablona_rocnikova_prace.aux (./_titulni_strana.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 333.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 333.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 341.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 341.
 Package rerunfilecheck Info: File `Sablona_rocnikova_prace.out' has not changed
 .
 (rerunfilecheck)             Checksum: 1D19D3C0C642BCDF8207EBD9C0755FA6;3470.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 333.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 341.
  ) 
 Here is how much of TeX's memory you used:
  13053 strings out of 492616
  184710 string characters out of 6132767
- 448209 words of memory out of 5000000
+ 447204 words of memory out of 5000000
  16732 multiletter control sequences out of 15000+600000
  13547 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,6n,51p,1414b,1525s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,6n,51p,1419b,1525s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{cite.v\375razy} has been referenced but does not 
 exist, replaced by a fixed one
 
@@ -549,10 +549,10 @@ bx1728.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb
 ve/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2018/te
 xmf-dist/fonts/type1/public/cm-super/sfti1200.pfb><c:/texlive/2018/texmf-dist/f
 onts/type1/public/cm-super/sftt1200.pfb>
-Output written on Sablona_rocnikova_prace.pdf (20 pages, 260461 bytes).
+Output written on Sablona_rocnikova_prace.pdf (20 pages, 260676 bytes).
 PDF statistics:
- 399 PDF objects out of 1000 (max. 8388607)
- 359 compressed objects within 4 object streams
+ 400 PDF objects out of 1000 (max. 8388607)
+ 360 compressed objects within 4 object streams
  119 named destinations out of 1000 (max. 500000)
  206 words of extra memory for PDF output out of 10000 (max. 10000000)
 
