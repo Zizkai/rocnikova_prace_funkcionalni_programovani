@@ -38,6 +38,7 @@
 \include{_titulni_strana}
 
 %%% Strana s automaticky generovaným obsahem diplomové práce
+
 \tableofcontents
 
 \chapter{Úvod}
@@ -237,6 +238,11 @@ Opět za pomoci rekurze vypíšeme vždy nejdříve levého syna, následně otc
 
 \chapter{Dokumentace}
 Oba níže popsané programy mají stejnou funkci, převádějí prefixovou notaci na infixovou. Toho docilují za pomoci binárních nevybalancovaných stromů, které jsme si představili výše.
+
+Ten jen postaven z prefixové notace. Stavba probíhá pomocí rekurze, která se zanořuje pokaždé, když je načteno znaménko. Znaménka jsou vždy otcové a čísla výhradně syny, kteří nemají potomky.
+
+Důležitou věcí, která je potřeba zmínit, je ta že oba programy jsou přizpůsobeny na převádění výrazů, které obsahují pouze \textbf{jednociferná čísla}. 
+
 \subsection*{Získání zdrojového kódu}
 Existují dvě cesty jak lze získat zdrojový kód. První možností je přistoupit na url adresu (viz. příloha ), zde kliknout na tlačítko \textit{Clone or download}, a následně vybrat možnost \textit{Download ZIP}. Tento soubor je poté nutno extrahovat. 
 
@@ -248,7 +254,7 @@ V tuto chvíli máte přístup ke zdrojovému kódu jednotlivých programů.
 
 \subsection{Vývoj a editace}
 Program byl vyvíjen v nástroji \textit{Code Blocks}, v repositáři se nachází nastavený projekt. Editace vstupu probíhá přímo v~kódu, v~souboru \textit{main.c}. Rozhodli jsme se zvolit tento, ne až tak praktický způsob, jelikož jsme chtěli primárně ukázat rozdíl mezi imperativním a~neimperativním způsobem programování. 
-
+\newpage
 \subsection{Princip fungování}
 Program vezme vstup, který mu zadal uživatel (modifikoval pole \textit{vstupniData}), převede ho do pole datového typu \textit{prefix}. Datový typ prefix obsahuje dvě proměnné z~nichž první je znak a~druhá číslo. Pokud je zadáno číslo, znak má nastavenou hodnotu na \textit{NULL}. Tento výše popsaný proces se děje pomocí funkce \textit{poleDoPrefix} (viz strana \pageref{pDP}.).
 
@@ -267,7 +273,7 @@ Inicializuje ukládání do stromu, tím že kontroluje, jestli nebyl zadán pr�
 Argumenty této funkce jsou: ukazatel na hlavu, vstupní pole a index (ten říká kolikáté pole vstupních dat se má uložit do stromu). Funkce si následně vytvoří proměnnou syn, která je ukazatelem na datový typ \textit{strom} (viz strana \pageref{strom}.). Poté je kontrolováno, zda se má uložit znaménko či číslo. Pokud se jedná o znaménko je do struktury \textit{syn} uloženo a pomocí ukazatelů je vytvořen odkaz z otce na syna a opačně. Následně je rekurzivně volána opět funkce \textit{ZapisDoLeva} s vyšším indexem o jedna. 
 
 Jedná-li se o číslo, je uloženo do struktury a opět je vytvořeno propojení mezi otcem a synem. Poté je zavolána funkce \textit{ZapisDoPrava} (viz strana \pageref{ZDP}.), ale je jí předán odkaz na otce. 
-
+\newpage
 \subsubsection{ZapisDoPrava} \label{ZDP}
 V principu funguje stejně jako předchozí funkce, akorát s tím rozdílem, že pokud se jedná o znaménko netypicky volá funkci \textit{ZapisDoLeva}.  
 
@@ -289,16 +295,47 @@ Je-li v hlavě uloženo číslo, vypíše se začátek závorky a následně tot
 Pokud je v hlavě (ta je předána v argumentu) znaménko, zavolá se funkce \textit{vypisL}, poté se vypíše znaménko v hlavě a následně se volá funkce \textit{vypisR}. 
 
 Je-li v hlavě uloženo číslo, vypíše se toto číslo a následně konec závorky.
-
+\newpage
 \section{Dokumentace neprocedurálního programu}
 \subsection{Vývoj a editace}
 Program byl vyvíjen v jazyce Haskell na platformě linux, jako vývojové prostředí jsme zvolili Atom. Hlavním důvodem bylo to, že existuje velké množství doplňků, které například zvýrazňují syntax Haskellu. Další nástroj, který je nutný pro kompilaci programu, je \textit{stack}. Který je dostupný z oficiálních stránek Haskellu \cite{stack}, ten obsahuje nástroj pro vytváření projektů, je schopen automaticky stahovat velké množství knihoven a navíc již sám o sobě obsahuje nejpoužívanější knihovny.
  
-Editace je možná přímo v souboru \textit{main.hs}, proč tomu tak je jsme již vysvětlili.  
+Editace je možná přímo v souboru \textit{Main.hs}, proč tomu tak je jsme již vysvětlili.  
 
+\subsection{Spuštění a kompilace}
+Pokud se rozhodneme spustit program na platformě Windows a máme již nainstalován kompilátor i s doplňky, stačí jen otevřít složku \textit{App}, v ní spustit soubor \textbf{Main.hs} a napsat příkaz \textbf{main}. Tím se spustí hlavní funkce programu a vypíše se výsledek. Pokud budeme editovat vstupní data, stačí upravenou verzi jen uložit a kompilátor sám zkompiluje daný program. 
+ 
+\subsection{Princip fungování}
+Ve funkci \textit{main} je volána funkce \textit{printIndex}, jejíž argumentem je další funkce. Tato funkce je \textit{buildTree} (viz strana \pageref{buildTree}.) s~argumentem \textit{prefix}.
 
+Již z definice Haskellu víme, že program začne vyhodnocovat nejdříve funkci \textit{buildTree} a následně vyhodnotí funkci \textit{printIndex} s argumentem, který je roven výsledku \textit{buildTree}. Tímto argumentem bude datová struktura stromu. Následně může být vypsán infixový tvar výrazu.  
 
-\section{Srovnání}
+\subsubsection{buildTree} \label{buildTree}
+Funkce nejdříve postaví levou (\textit{buildLeft} viz strana \pageref{buildLeft}.) část stromu a následně pravou část  (\textit{buildRight} viz strana \pageref{buildRight}.). Výstupem této funkce je datový typ Tree Char. Argumentem, který dostává je list znaků, v programu zvaný \textit{prefix}.
+
+\subsubsection{buildLeft} \label{buildLeft}
+Dostává dva argumenty, jedním z nich je list znaků (\textit{prefix}) a druhým je pomocný datový typ Builder Char (viz strana \pageref{Builder}.). Ten zajišťuje to, aby byl vždy vzat správný prvek z listu. Dalším důvodem jeho použití je to, že si dokáže pamatovat strukturu strom. Pokud-li chceme pomocí této funkce uložit do stromu znaménko, zavolá se opět tato funkce, ale s o jedna větším indexem. Poté co se vynoří z této rekurze, opět se zanoří do rekurze (\textit{buildRight} viz strana \pageref{buildRight}.), ale tentokrát do pravé větve. Obě rekurzivní zanoření končí tu chvíli, kdy chceme do stromu uložit číslo. 
+Výstupem této funkce je Builder Char, který obsahuje číslo dalšího indexu, který by se měl načítat z listu. Druhou důležitou hodnotu, kterou Builder uchovává je celá struktura stromu pod ním.   
+\subsubsection{buildRight} \label{buildRight}
+Je naprosto stejná jako \textit{buildLeft}. Dala by se nahradit předešlou funkcí, jen s tím rozdílem, že by se volala s jiným argumentem. 
+\subsubsection{Tree a}
+Tato datová struktura může mít hned dvě podoby. První podobou je ta, ve které strom nikam nevede, a proto je nastavena hodnota na \textbf{Empty} (to je námi zadefinované pojmenování). Druhou podobou je taková, kdy strom obsahuje hodnotu typu \textit{a} (stejná jako datový typ stromu) další hodnotou je struktura stromu (můžeme si ji označit jako levá větev) a poslední hodnotou datové struktury \textit{Tree} je opět strom (pro jednoduchost ji můžeme nazývat pravá větev).
+
+\subsubsection{Builder a} \label{Builder}
+Je pomocná stavební struktura, která obsahuje číslo a datovou strukturu stromu. Je využita k uchovávání indexu dalšího členu a vrácení stromu z rekurze.
+\subsubsection{printInfix} \label{printInfix} 
+Argumentem této funkce je struktura stromu a výstupem je vypsání do konzole. Nejdříve vypisuji levou část stromu (\textit{printLeft} viz strana \pageref{printLeft}.), následně vypíše hodnotu uloženou v začátku stromu a jako poslední vypíše pravou větev (\textit{printRight} viz strana \pageref{printRight}.)
+
+\subsubsection{printLeft} \label{printLeft}
+Dostává v argumentu strukturu stromu. Když chceme vypsat hlavu stromu, v níž je uloženo znaménko, nejprve vypíše otevřenou závorku a následně volá funkce sama sebe s argumentem levého syna, poté se vypíše hodnota znaménka v hlavě a následně se vypíše pravá větev(\textit{printRight} viz strana \pageref{printRight}.).
+
+Když chceme vypsat hlavu, kde je uloženo číslo vypíšeme nejdříve otevřenou závorku a poté číslo uložené v hlavě. Tím tím se vracíme o krok zpět v rekurzy.
+\newpage
+\subsubsection{printRight} \label{printRight}
+Stejně jako předchozí funkce dostává jako argument strukturu stromu. Vypisujeme-li znaménko, nejdříve voláme funkci na vypsání levého stromu, poté vypíšeme hodnotu hlavy a následně vypíšeme pravou větev. Vše ukončíme vypsáním uzavřené závorky.
+
+Vypisujeme-li číslo, nejprve zobrazíme do konzole číslo a následně ukončenou závorku. 
+\chapter{Srovnání}
 
 \chapter{Závěr}
 

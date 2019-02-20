@@ -1,39 +1,49 @@
 \babel@toc {czech}{}
-\contentsline {chapter}{\numberline {1}\IeC {\'U}vod}{3}{chapter.1}% 
-\contentsline {chapter}{\numberline {2}Teorie funkcion\IeC {\'a}ln\IeC {\'\i }ho programov\IeC {\'a}n\IeC {\'\i }}{4}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}Historie}{4}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}Funkcion\IeC {\'a}ln\IeC {\'\i } programov\IeC {\'a}n\IeC {\'\i }}{4}{section.2.2}% 
-\contentsline {subsection}{\numberline {2.2.1}Rozd\IeC {\'\i }l mezi funkcion\IeC {\'a}ln\IeC {\'\i }m a imperativn\IeC {\'\i }m programov\IeC {\'a}n\IeC {\'\i }m}{5}{subsection.2.2.1}% 
-\contentsline {subsection}{\numberline {2.2.2}Lambda kalkul}{6}{subsection.2.2.2}% 
-\contentsline {subsubsection}{V\IeC {\'a}zan\IeC {\'e} a voln\IeC {\'e} prom\IeC {\v e}nn\IeC {\'e}}{7}{section*.2}% 
-\contentsline {subsection}{\numberline {2.2.3}Higher-order funkce}{7}{subsection.2.2.3}% 
-\contentsline {subsection}{\numberline {2.2.4}Vedlej\IeC {\v s}\IeC {\'\i } efekty}{8}{subsection.2.2.4}% 
-\contentsline {subsection}{\numberline {2.2.5}Mon\IeC {\'a}dy}{8}{subsection.2.2.5}% 
-\contentsline {subsubsection}{IO - vstup a v\IeC {\'y}stup}{9}{section*.3}% 
-\contentsline {subsubsection}{Maybe}{9}{section*.4}% 
-\contentsline {subsubsection}{List}{9}{section*.5}% 
-\contentsline {section}{\numberline {2.3}Haskell}{10}{section.2.3}% 
-\contentsline {chapter}{\numberline {3}Aritmetick\IeC {\'e} v\IeC {\'y}razy}{11}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Notace}{11}{section.3.1}% 
-\contentsline {subsection}{\numberline {3.1.1}Prefix}{11}{subsection.3.1.1}% 
-\contentsline {subsection}{\numberline {3.1.2}Postfix}{11}{subsection.3.1.2}% 
-\contentsline {subsection}{\numberline {3.1.3}Infix}{11}{subsection.3.1.3}% 
-\contentsline {subsubsection}{P\IeC {\v r}evod notac\IeC {\'\i }}{13}{section*.7}% 
-\contentsline {chapter}{\numberline {4}Dokumentace}{14}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Dokumentace procedur\IeC {\'a}ln\IeC {\'\i }ho programu}{14}{section.4.1}% 
-\contentsline {subsection}{\numberline {4.1.1}V\IeC {\'y}voj a editace}{14}{subsection.4.1.1}% 
-\contentsline {subsection}{\numberline {4.1.2}Princip fungov\IeC {\'a}n\IeC {\'\i }}{14}{subsection.4.1.2}% 
-\contentsline {subsubsection}{poleDoPrefix}{15}{section*.9}% 
-\contentsline {subsubsection}{UkladaniDoStromu}{15}{section*.10}% 
-\contentsline {subsubsection}{ZapisDoLeva}{15}{section*.11}% 
-\contentsline {subsubsection}{ZapisDoPrava}{15}{section*.12}% 
-\contentsline {subsubsection}{strom}{15}{section*.13}% 
-\contentsline {subsubsection}{infix}{16}{section*.14}% 
-\contentsline {subsubsection}{vypisL}{16}{section*.15}% 
-\contentsline {subsubsection}{vypisR}{16}{section*.16}% 
-\contentsline {section}{\numberline {4.2}Dokumentace neprocedur\IeC {\'a}ln\IeC {\'\i }ho programu}{16}{section.4.2}% 
-\contentsline {subsection}{\numberline {4.2.1}V\IeC {\'y}voj a editace}{16}{subsection.4.2.1}% 
-\contentsline {section}{\numberline {4.3}Srovn\IeC {\'a}n\IeC {\'\i }}{16}{section.4.3}% 
-\contentsline {chapter}{\numberline {5}Z\IeC {\'a}v\IeC {\v e}r}{17}{chapter.5}% 
-\contentsline {chapter}{Literatura}{18}{chapter*.17}% 
-\contentsline {chapter}{P\IeC {\v r}\IeC {\'\i }lohy}{19}{chapter*.18}% 
+\contentsline {chapter}{\numberline {1}\IeC {\'U}vod}{4}{chapter.1}% 
+\contentsline {chapter}{\numberline {2}Teorie funkcion\IeC {\'a}ln\IeC {\'\i }ho programov\IeC {\'a}n\IeC {\'\i }}{5}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Historie}{5}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Funkcion\IeC {\'a}ln\IeC {\'\i } programov\IeC {\'a}n\IeC {\'\i }}{5}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}Rozd\IeC {\'\i }l mezi funkcion\IeC {\'a}ln\IeC {\'\i }m a imperativn\IeC {\'\i }m programov\IeC {\'a}n\IeC {\'\i }m}{6}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}Lambda kalkul}{7}{subsection.2.2.2}% 
+\contentsline {subsubsection}{V\IeC {\'a}zan\IeC {\'e} a voln\IeC {\'e} prom\IeC {\v e}nn\IeC {\'e}}{8}{section*.2}% 
+\contentsline {subsection}{\numberline {2.2.3}Higher-order funkce}{8}{subsection.2.2.3}% 
+\contentsline {subsection}{\numberline {2.2.4}Vedlej\IeC {\v s}\IeC {\'\i } efekty}{9}{subsection.2.2.4}% 
+\contentsline {subsection}{\numberline {2.2.5}Mon\IeC {\'a}dy}{9}{subsection.2.2.5}% 
+\contentsline {subsubsection}{IO - vstup a v\IeC {\'y}stup}{10}{section*.3}% 
+\contentsline {subsubsection}{Maybe}{10}{section*.4}% 
+\contentsline {subsubsection}{List}{10}{section*.5}% 
+\contentsline {section}{\numberline {2.3}Haskell}{11}{section.2.3}% 
+\contentsline {chapter}{\numberline {3}Aritmetick\IeC {\'e} v\IeC {\'y}razy}{12}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Notace}{12}{section.3.1}% 
+\contentsline {subsection}{\numberline {3.1.1}Prefix}{12}{subsection.3.1.1}% 
+\contentsline {subsection}{\numberline {3.1.2}Postfix}{12}{subsection.3.1.2}% 
+\contentsline {subsection}{\numberline {3.1.3}Infix}{12}{subsection.3.1.3}% 
+\contentsline {subsubsection}{P\IeC {\v r}evod notac\IeC {\'\i }}{14}{section*.7}% 
+\contentsline {chapter}{\numberline {4}Dokumentace}{15}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Dokumentace procedur\IeC {\'a}ln\IeC {\'\i }ho programu}{15}{section.4.1}% 
+\contentsline {subsection}{\numberline {4.1.1}V\IeC {\'y}voj a editace}{15}{subsection.4.1.1}% 
+\contentsline {subsection}{\numberline {4.1.2}Princip fungov\IeC {\'a}n\IeC {\'\i }}{16}{subsection.4.1.2}% 
+\contentsline {subsubsection}{poleDoPrefix}{16}{section*.9}% 
+\contentsline {subsubsection}{UkladaniDoStromu}{16}{section*.10}% 
+\contentsline {subsubsection}{ZapisDoLeva}{16}{section*.11}% 
+\contentsline {subsubsection}{ZapisDoPrava}{17}{section*.12}% 
+\contentsline {subsubsection}{strom}{17}{section*.13}% 
+\contentsline {subsubsection}{infix}{17}{section*.14}% 
+\contentsline {subsubsection}{vypisL}{17}{section*.15}% 
+\contentsline {subsubsection}{vypisR}{17}{section*.16}% 
+\contentsline {section}{\numberline {4.2}Dokumentace neprocedur\IeC {\'a}ln\IeC {\'\i }ho programu}{18}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}V\IeC {\'y}voj a editace}{18}{subsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.2.2}Spu\IeC {\v s}t\IeC {\v e}n\IeC {\'\i } a kompilace}{18}{subsection.4.2.2}% 
+\contentsline {subsection}{\numberline {4.2.3}Princip fungov\IeC {\'a}n\IeC {\'\i }}{18}{subsection.4.2.3}% 
+\contentsline {subsubsection}{buildTree}{18}{section*.17}% 
+\contentsline {subsubsection}{buildLeft}{18}{section*.18}% 
+\contentsline {subsubsection}{buildRight}{19}{section*.19}% 
+\contentsline {subsubsection}{Tree a}{19}{section*.20}% 
+\contentsline {subsubsection}{Builder a}{19}{section*.21}% 
+\contentsline {subsubsection}{printInfix}{19}{section*.22}% 
+\contentsline {subsubsection}{printLeft}{19}{section*.23}% 
+\contentsline {subsubsection}{printRight}{20}{section*.24}% 
+\contentsline {chapter}{\numberline {5}Srovn\IeC {\'a}n\IeC {\'\i }}{21}{chapter.5}% 
+\contentsline {chapter}{\numberline {6}Z\IeC {\'a}v\IeC {\v e}r}{22}{chapter.6}% 
+\contentsline {chapter}{Literatura}{23}{chapter*.25}% 
+\contentsline {chapter}{P\IeC {\v r}\IeC {\'\i }lohy}{24}{chapter*.26}% 
