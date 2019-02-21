@@ -335,8 +335,19 @@ Když chceme vypsat hlavu, kde je uloženo číslo vypíšeme nejdříve otevře
 Stejně jako předchozí funkce dostává jako argument strukturu stromu. Vypisujeme-li znaménko, nejdříve voláme funkci na vypsání levého stromu, poté vypíšeme hodnotu hlavy a následně vypíšeme pravou větev. Vše ukončíme vypsáním uzavřené závorky.
 
 Vypisujeme-li číslo, nejprve zobrazíme do konzole číslo a následně ukončenou závorku. 
-\chapter{Srovnání}
 
+\chapter{Srovnání}
+V této kapitole se zaměříme na subjektivní srovnání funkcionálního a nefunkcionální programování založeného za zkušenosti, které jsme nabyli při vytváření převodu prefixové notace na infixovou. 
+
+\section{Srovnání rozdílného přemýšlení}
+Rozdílné přemýšlení ve funkcionálních jazycích, v našem případě přímo v Haskellu, bylo pro nás nejtěžším problémem. Zažité postupy a způsoby řešení z imperativních programovacích jazyků, zde mnohdy nefungují. Hlavní rozdíl jsme mohli spatřit již v samotné funkci \textbf{main}, která u obou programů polní stejnou funkci. Hlavní rozdíl je v přemýšlení nad posloupností příkazů. Například v jazyce C přemýšlíme chronologicky a snažíme se postupovat od vstupu až po výsledný algoritmus. Samozřejmě, že to není vyžadováno, ale mnoho programátorů to takto dělá. Ve funkcionálním programování je situace opačná je zde nepřímo vyžadováno přemýšlení od výstupu ke vstupu, alespoň takto to na nás působilo.  
+
+Dalším velkým rozdílem je, že při tvorbě v Haskellu jsme velmi často pracovali s rekurzí. Již dříve jsme měli zkušenosti s rekurzí, ale nikoliv v tak velkém množství. V podstatě tam, kde bychom v imperativním jazyce napsali cyklus, zde píšeme rekurzivní funkci. 
+
+\section{Formální stránka kódu}
+Hned na první pohled si můžeme všimnout toho, že ve funkcionálním programu je skoro až absence čísel. Kód, který jsme vyprodukovali v Haskellu, více připomíná anglický jazyk než program, na který jsme zvyklí. V tom je částečně krása funkcionálního programování, je zde úplná absence proměnných jaké známe z nefunkcionálních jazyků. Jak jsme již zmínili v teorii, nelze za běhu programu měnit stav proměnné. Proměnné v čistě funkcionálních programech mají spíše funkci substituce. Z této vlastnosti plyne absence vedlejších efektů funkcí, tím je zajištěno to, že programy vytvořené ve funkcionálních jazycích nemají často chyby (ve smyslu programátorské).
+
+Proto častěji než klasické krokování programu řádek po řádku se v Haskellu užívají testy. Kdy zadáme vstupní data a očekávaný výsledek   
 \chapter{Závěr}
 
 

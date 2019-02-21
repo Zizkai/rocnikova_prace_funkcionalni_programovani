@@ -44,6 +44,8 @@
 \contentsline {subsubsection}{printLeft}{19}{section*.23}% 
 \contentsline {subsubsection}{printRight}{20}{section*.24}% 
 \contentsline {chapter}{\numberline {5}Srovn\IeC {\'a}n\IeC {\'\i }}{21}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Srovn\IeC {\'a}n\IeC {\'\i } rozd\IeC {\'\i }ln\IeC {\'e}ho p\IeC {\v r}em\IeC {\'y}\IeC {\v s}len\IeC {\'\i }}{21}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Form\IeC {\'a}ln\IeC {\'\i } str\IeC {\'a}nka k\IeC {\'o}du}{21}{section.5.2}% 
 \contentsline {chapter}{\numberline {6}Z\IeC {\'a}v\IeC {\v e}r}{22}{chapter.6}% 
 \contentsline {chapter}{Literatura}{23}{chapter*.25}% 
 \contentsline {chapter}{P\IeC {\v r}\IeC {\'\i }lohy}{24}{chapter*.26}% 
