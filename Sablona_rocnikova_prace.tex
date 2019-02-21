@@ -42,7 +42,7 @@
 \tableofcontents
 
 \chapter{Úvod}
-Cílem práce je vytvořit dva programy s identickou funkcí, ale každý vytvořený v jiném programovacím jazyce a zcela jinou metodou. Oba programy budou převádět prefixový zápis na infixový s tím ,že první z~těchto dvou bude tvořen procedurálně a~to v~jazyce C. Druhý program bude tvořen v čistě funkcionálním programovacím jazyce Haskell. Hlavním cílem je srovnat odlišné styly programování a zároveň ukázat výhody a nevýhody funkcionálních programovacích jazyků. 
+Cílem práce je vytvořit dva programy s identickou funkcí, ale každý vytvořený v jiném programovacím jazyce a zcela jinou metodou. Oba programy budou převádět prefixový zápis na infixový s tím, že první z~těchto dvou bude tvořen procedurálně a~to v~jazyce C. Druhý program bude tvořen v čistě funkcionálním programovacím jazyce Haskell. Druhým cílem je vysvětlit základní pojmy funkcionálního programování, srovnat odlišné styly programování a zároveň ukázat výhody a nevýhody funkcionálních programovacích jazyků. 
 
 \chapter{Teorie funkcionálního programování} % NÁZVY KAPITOL NEJVYŠŠÍ ÚROVNĚ
 
@@ -306,7 +306,7 @@ Editace je možná přímo v souboru \textit{Main.hs}, proč tomu tak je jsme ji
 Pokud se rozhodneme spustit program na platformě Windows a máme již nainstalován kompilátor i s doplňky, stačí jen otevřít složku \textit{App}, v ní spustit soubor \textbf{Main.hs} a napsat příkaz \textbf{main}. Tím se spustí hlavní funkce programu a vypíše se výsledek. Pokud budeme editovat vstupní data, stačí upravenou verzi jen uložit a kompilátor sám zkompiluje daný program. 
  
 \subsection{Princip fungování}
-Ve funkci \textit{main} je volána funkce \textit{printIndex}, jejíž argumentem je další funkce. Tato funkce je \textit{buildTree} (viz strana \pageref{buildTree}.) s~argumentem \textit{prefix}.
+Ve funkci \textit{main} je volána funkce \textit{printIndex}, jíž argumentem je další funkce. Tato funkce je \textit{buildTree} (viz strana \pageref{buildTree}.) s~argumentem \textit{prefix}.
 
 Již z definice Haskellu víme, že program začne vyhodnocovat nejdříve funkci \textit{buildTree} a následně vyhodnotí funkci \textit{printIndex} s argumentem, který je roven výsledku \textit{buildTree}. Tímto argumentem bude datová struktura stromu. Následně může být vypsán infixový tvar výrazu.  
 
@@ -324,12 +324,12 @@ Tato datová struktura může mít hned dvě podoby. První podobou je ta, ve kt
 \subsubsection{Builder a} \label{Builder}
 Je pomocná stavební struktura, která obsahuje číslo a datovou strukturu stromu. Je využita k uchovávání indexu dalšího členu a vrácení stromu z rekurze.
 \subsubsection{printInfix} \label{printInfix} 
-Argumentem této funkce je struktura stromu a výstupem je vypsání do konzole. Nejdříve vypisuji levou část stromu (\textit{printLeft} viz strana \pageref{printLeft}.), následně vypíše hodnotu uloženou v začátku stromu a jako poslední vypíše pravou větev (\textit{printRight} viz strana \pageref{printRight}.)
+Argumentem této funkce je struktura stromu a výstupem je vypsání do konzole. Nejdříve vypisuje levou část stromu (\textit{printLeft} viz strana \pageref{printLeft}.), následně vypíše hodnotu uloženou v začátku stromu a jako poslední vypíše pravou větev (\textit{printRight} viz strana \pageref{printRight}.)
 
 \subsubsection{printLeft} \label{printLeft}
-Dostává v argumentu strukturu stromu. Když chceme vypsat hlavu stromu, v níž je uloženo znaménko, nejprve vypíše otevřenou závorku a následně volá funkce sama sebe s argumentem levého syna, poté se vypíše hodnota znaménka v hlavě a následně se vypíše pravá větev(\textit{printRight} viz strana \pageref{printRight}.).
+Dostává v argumentu strukturu stromu. Když chceme vypsat hlavu stromu, v níž je uloženo znaménko, nejprve vypíše otevřenou závorku a následně volá funkce sama sebe s argumentem levého syna, poté se vypíše hodnota znaménka v hlavě a následně se vypíše pravá větev (\textit{printRight} viz strana \pageref{printRight}.).
 
-Když chceme vypsat hlavu, kde je uloženo číslo vypíšeme nejdříve otevřenou závorku a poté číslo uložené v hlavě. Tím tím se vracíme o krok zpět v rekurzy.
+Když chceme vypsat hlavu, kde je uloženo číslo vypíšeme nejdříve otevřenou závorku a poté číslo uložené v hlavě. Tím se vracíme o krok zpět v rekurzi.
 \newpage
 \subsubsection{printRight} \label{printRight}
 Stejně jako předchozí funkce dostává jako argument strukturu stromu. Vypisujeme-li znaménko, nejdříve voláme funkci na vypsání levého stromu, poté vypíšeme hodnotu hlavy a následně vypíšeme pravou větev. Vše ukončíme vypsáním uzavřené závorky.
@@ -337,17 +337,17 @@ Stejně jako předchozí funkce dostává jako argument strukturu stromu. Vypisu
 Vypisujeme-li číslo, nejprve zobrazíme do konzole číslo a následně ukončenou závorku. 
 
 \chapter{Srovnání}
-V této kapitole se zaměříme na subjektivní srovnání funkcionálního a nefunkcionální programování založeného za zkušenosti, které jsme nabyli při vytváření převodu prefixové notace na infixovou. 
+V této kapitole se zaměříme na subjektivní srovnání funkcionálního a nefunkcionálního programování založeného na zkušenosti, které jsme nabyli při vytváření převodu prefixové notace na infixovou. 
 
 \section{Srovnání rozdílného přemýšlení}
-Rozdílné přemýšlení ve funkcionálních jazycích, v našem případě přímo v Haskellu, bylo pro nás nejtěžším problémem. Zažité postupy a způsoby řešení z imperativních programovacích jazyků, zde mnohdy nefungují. Hlavní rozdíl jsme mohli spatřit již v samotné funkci \textbf{main}, která u obou programů polní stejnou funkci. Hlavní rozdíl je v přemýšlení nad posloupností příkazů. Například v jazyce C přemýšlíme chronologicky a snažíme se postupovat od vstupu až po výsledný algoritmus. Samozřejmě, že to není vyžadováno, ale mnoho programátorů to takto dělá. Ve funkcionálním programování je situace opačná je zde nepřímo vyžadováno přemýšlení od výstupu ke vstupu, alespoň takto to na nás působilo.  
+Rozdílné přemýšlení ve funkcionálních jazycích, v našem případě přímo v Haskellu, bylo pro nás nejtěžším problémem. Zažité postupy a způsoby řešení z imperativních programovacích jazyků, zde mnohdy nefungují. Hlavní rozdíl jsme mohli spatřit již v samotné funkci \textbf{main}, která u obou programů plní stejnou funkci. Hlavní rozdíl je v přemýšlení nad posloupností příkazů. Například v jazyce C přemýšlíme chronologicky a snažíme se postupovat od vstupu až po výsledný algoritmus. Samozřejmě, že to není vyžadováno, ale mnoho programátorů to takto dělá. Ve funkcionálním programování je situace opačná, je zde nepřímo vyžadováno přemýšlení od výstupu ke vstupu, alespoň takto to na nás působilo.  
 
 Dalším velkým rozdílem je, že při tvorbě v Haskellu jsme velmi často pracovali s rekurzí. Již dříve jsme měli zkušenosti s rekurzí, ale nikoliv v tak velkém množství. V podstatě tam, kde bychom v imperativním jazyce napsali cyklus, zde píšeme rekurzivní funkci. 
 
 \section{Formální stránka kódu}
-Hned na první pohled si můžeme všimnout toho, že ve funkcionálním programu je skoro až absence čísel. Kód, který jsme vyprodukovali v Haskellu, více připomíná anglický jazyk než program, na který jsme zvyklí. V tom je částečně krása funkcionálního programování, je zde úplná absence proměnných jaké známe z nefunkcionálních jazyků. Jak jsme již zmínili v teorii, nelze za běhu programu měnit stav proměnné. Proměnné v čistě funkcionálních programech mají spíše funkci substituce. Z této vlastnosti plyne absence vedlejších efektů funkcí, tím je zajištěno to, že programy vytvořené ve funkcionálních jazycích nemají často chyby (ve smyslu programátorské). Proto častěji než klasické krokování programu řádek po řádku se v Haskellu užívají testy. Kdy zadáme vstupní data a očekávaný výsledek, následně se vypíše jestli se shoduje naše očekávání s reálným výstupem.  
+Hned na první pohled si můžeme všimnout toho, že ve funkcionálním programu je skoro až absence čísel. Kód, který jsme vyprodukovali v Haskellu, více připomíná anglický jazyk než program, na který jsme zvyklí. V tom je částečně krása funkcionálního programování, je zde úplná absence proměnných jaké známe z nefunkcionálních jazyků. Jak jsme již zmínili v teorii, nelze za běhu programu měnit stav proměnné. Proměnné v čistě funkcionálních programech mají spíše funkci substituce. Z této vlastnosti plyne absence vedlejších efektů funkcí, tím je zajištěno to, že programy vytvořené ve funkcionálních jazycích nemají často chyby (ve smyslu programátorské). Proto častěji než klasické krokování programu řádek po řádku se v Haskellu užívají testy. Kde zadáme vstupní data a očekávaný výsledek, následně se vypíše, jestli se shoduje naše očekávání s reálným výstupem.  
 \newpage
-Dalším charakteristickým znakem funkcionálního programování je to, že si programátor může kód dost přizpůsobovat k obrazu svému. Nádherným příkladem mohou být datové struktury. Zde si můžeme podle libosti vytvářet pojmenování, příkladem takovéhoto pojmenování je struktura stromu.
+Dalším charakteristickým znakem funkcionálního programování je to, že si programátor může kód dost přizpůsobovat k obrazu svému. Nádherným příkladem mohou být datové struktury. Zde si můžeme podle libosti vytvářet pojmenování, příkladem takového pojmenování je struktura stromu.
 \begin{lstlisting}[language=Haskell, caption={Definice datového typu Tree}, captionpos=b,]
 data Tree a = Empty
     | Node a (Tree a) (Tree a)
@@ -355,6 +355,10 @@ data Tree a = Empty
 \end{lstlisting}
 
 Zde bychom mohli nahradit \textit{Empty} za \textit{NULL} a výsledek by byl stejný.    
+\section{Srovnání programů}
+Nejdůležitější rozdíl vidíme ve stavbě stromu. U programu, který byl tvořen v jazyce C jsme si mohli dovolit používání ukazatelů a z toho důvodu také předávat ukazatel například na svého otce. Tento způsob jsme zvolili záměrně, abychom demonstrovali možnosti jazyka C. Na druhou stranu jsme museli řešit nečekané programátorské chyby, které se při psaní programy vyskytly. Nejčastěji se jednalo o předávání špatného indexu nebo ukazatele. 
+
+V Haskellovém programu jsme strom museli stavět rekurzivně a řešení nebylo tak intuitivní jako v neprocedurálním jazyku C. Haskell využívá místo ukazatelů strukturu, která si uchovává celý strom.  
 
 \section{Výhody}
 Funkcionální jazyky umožňují obrovskou míru abstrakce, snazší rozdělení do funkcí nebo modulů. Dají se zde využívat funkce vyšších řádů, a může tak vzniknout kód, který je srozumitelnější a často i kratší nežli jeho imperativní varianta. Výhodou Haskellu je líné vyhodnocování, které mnohdy urychlí algoritmus. V poslední řadě spatřujeme výhodu ve velké striktnosti datových typů.
@@ -363,7 +367,9 @@ Jelikož většina počítačů není navržena pro funkcionální jazyky, můž
 Další nevýhodou je složitost překladačů a při využití líného vyhodnocení i těžce odhadnutelná paměťová složitost.
 
 \chapter{Závěr}
+V této práci se nám povedlo vytvořit dva rozdílné programy, které jsou však vytvořeny jinou programovací metodou. Oba programy jsou zcela funkční, ale dokáží převádět takové výrazy, které obsahují jen jednociferná čísla. Tyto dvě implementace převodu prefixového zápisu na infixový, nám však poskytli dostatečné znalosti k tomu, abychom mohli porovnat imperativní a neimperativní programovací jazyky. V našem případě konkrétně jazyk C s jazykem Haskell. 
 
+Největší rozdíl spatřujeme ve způsobu myšlení, který je u neimperativního naprosto rozdílný. Výhodou funkcionálních jazyků je abstrakce a jednoduchý zápis některých algoritmů. Hlavní nevýhodou je to, že většina dnešních počítačů není konstruována pro zpracování funkcionálního kódu.  
 
 %%% Seznam použité literatury
 \begin{thebibliography}{99}
