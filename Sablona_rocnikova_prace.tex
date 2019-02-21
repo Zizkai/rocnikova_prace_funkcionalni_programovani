@@ -345,9 +345,23 @@ Rozdílné přemýšlení ve funkcionálních jazycích, v našem případě př
 Dalším velkým rozdílem je, že při tvorbě v Haskellu jsme velmi často pracovali s rekurzí. Již dříve jsme měli zkušenosti s rekurzí, ale nikoliv v tak velkém množství. V podstatě tam, kde bychom v imperativním jazyce napsali cyklus, zde píšeme rekurzivní funkci. 
 
 \section{Formální stránka kódu}
-Hned na první pohled si můžeme všimnout toho, že ve funkcionálním programu je skoro až absence čísel. Kód, který jsme vyprodukovali v Haskellu, více připomíná anglický jazyk než program, na který jsme zvyklí. V tom je částečně krása funkcionálního programování, je zde úplná absence proměnných jaké známe z nefunkcionálních jazyků. Jak jsme již zmínili v teorii, nelze za běhu programu měnit stav proměnné. Proměnné v čistě funkcionálních programech mají spíše funkci substituce. Z této vlastnosti plyne absence vedlejších efektů funkcí, tím je zajištěno to, že programy vytvořené ve funkcionálních jazycích nemají často chyby (ve smyslu programátorské).
+Hned na první pohled si můžeme všimnout toho, že ve funkcionálním programu je skoro až absence čísel. Kód, který jsme vyprodukovali v Haskellu, více připomíná anglický jazyk než program, na který jsme zvyklí. V tom je částečně krása funkcionálního programování, je zde úplná absence proměnných jaké známe z nefunkcionálních jazyků. Jak jsme již zmínili v teorii, nelze za běhu programu měnit stav proměnné. Proměnné v čistě funkcionálních programech mají spíše funkci substituce. Z této vlastnosti plyne absence vedlejších efektů funkcí, tím je zajištěno to, že programy vytvořené ve funkcionálních jazycích nemají často chyby (ve smyslu programátorské). Proto častěji než klasické krokování programu řádek po řádku se v Haskellu užívají testy. Kdy zadáme vstupní data a očekávaný výsledek, následně se vypíše jestli se shoduje naše očekávání s reálným výstupem.  
+\newpage
+Dalším charakteristickým znakem funkcionálního programování je to, že si programátor může kód dost přizpůsobovat k obrazu svému. Nádherným příkladem mohou být datové struktury. Zde si můžeme podle libosti vytvářet pojmenování, příkladem takovéhoto pojmenování je struktura stromu.
+\begin{lstlisting}[language=Haskell, caption={Definice datového typu Tree}, captionpos=b,]
+data Tree a = Empty
+    | Node a (Tree a) (Tree a)
+    deriving (Show)
+\end{lstlisting}
 
-Proto častěji než klasické krokování programu řádek po řádku se v Haskellu užívají testy. Kdy zadáme vstupní data a očekávaný výsledek   
+Zde bychom mohli nahradit \textit{Empty} za \textit{NULL} a výsledek by byl stejný.    
+
+\section{Výhody}
+Funkcionální jazyky umožňují obrovskou míru abstrakce, snazší rozdělení do funkcí nebo modulů. Dají se zde využívat funkce vyšších řádů, a může tak vzniknout kód, který je srozumitelnější a často i kratší nežli jeho imperativní varianta. Výhodou Haskellu je líné vyhodnocování, které mnohdy urychlí algoritmus. V poslední řadě spatřujeme výhodu ve velké striktnosti datových typů.
+\section{Nevýhody}
+Jelikož většina počítačů není navržena pro funkcionální jazyky, může být i papírově efektivnější algoritmus paradoxně pomalejší než jeho imperativní ekvivalent. Některé postupy které známe z nefunkcionálních jazyků lze velice těžko implementovat do funkcionálních programů. Příkladem může být například hašovací tabulka, kterou můžeme znát například z jazyka C\#. 
+Další nevýhodou je složitost překladačů a při využití líného vyhodnocení i těžce odhadnutelná paměťová složitost.
+
 \chapter{Závěr}
 
 
