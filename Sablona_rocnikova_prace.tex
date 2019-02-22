@@ -239,7 +239,7 @@ Opět za pomoci rekurze vypíšeme vždy nejdříve levého syna, následně otc
 \chapter{Dokumentace}
 Oba níže popsané programy mají stejnou funkci, převádějí prefixovou notaci na infixovou. Toho docilují za pomoci binárních nevybalancovaných stromů, které jsme si představili výše.
 
-Ten jen postaven z prefixové notace. Stavba probíhá pomocí rekurze, která se zanořuje pokaždé, když je načteno znaménko. Znaménka jsou vždy otcové a čísla výhradně syny, kteří nemají potomky.
+Ten jen postaven z prefixové notace. Stavba probíhá pomocí rekurze, která se zanořuje pokaždé, když je načteno znaménko. Znaménka jsou vždy otcové a čísla výhradně synové, kteří nemají potomky.
 
 Důležitou věcí, která je potřeba zmínit, je ta že oba programy jsou přizpůsobeny na převádění výrazů, které obsahují pouze \textbf{jednociferná čísla}. 
 
@@ -264,15 +264,15 @@ Po ukončení stavby stromu je zavolána funkce \textit{infix} (viz strana \page
 
 
 \subsubsection{poleDoPrefix} \label{pDP}
-Tato funkce vyžaduje dva argumenty, prvním z nich je vstupní pole (zadaná data) a druhým argumentem je počet prvků pole, ten je získán podílem, kde prvním operandem je velikost vstupního pole a druhým je velikost datového typu \textit{char}. Výstupem funkce \textit{poleDoPrefix} je ukazatel na  pole datového typu \textit{prefix}.
+Tato funkce vyžaduje dva argumenty, prvním z nich je vstupní pole (zadaná data) a~druhým argumentem je počet prvků pole, ten je získán podílem, kde prvním operandem je velikost vstupního pole a druhým je velikost datového typu \textit{char}. Výstupem funkce \textit{poleDoPrefix} je ukazatel na  pole datového typu \textit{prefix}.
 
 \subsubsection{UkladaniDoStromu} \label{UDS}
-Inicializuje ukládání do stromu, tím že kontroluje, jestli nebyl zadán prázdný vstup a následně volá funkci \textit{ZapisDoLeva} (viz strana \pageref{ZDL}.). Argumenty funkce \textit{UkladaniDoStromu} jsou vstupní data (datový typ prefix), ukazatel na hlavu (datový typ strom) a velikost pole (datový typ int). Výstupem není nic, jelikož ukazatel na hlavu stromu si uchováváme ve funkci \textit{main}.
+Inicializuje ukládání do stromu, tím že kontroluje, jestli nebyl zadán prázdný vstup a~následně volá funkci \textit{ZapisDoLeva} (viz strana \pageref{ZDL}.). Argumenty funkce \textit{UkladaniDoStromu} jsou vstupní data (datový typ prefix), ukazatel na hlavu (datový typ strom) a velikost pole (datový typ int). Výstupem není nic, jelikož ukazatel na hlavu stromu si uchováváme ve funkci \textit{main}.
 
 \subsubsection{ZapisDoLeva} \label{ZDL}
 Argumenty této funkce jsou: ukazatel na hlavu, vstupní pole a index (ten říká kolikáté pole vstupních dat se má uložit do stromu). Funkce si následně vytvoří proměnnou syn, která je ukazatelem na datový typ \textit{strom} (viz strana \pageref{strom}.). Poté je kontrolováno, zda se má uložit znaménko či číslo. Pokud se jedná o znaménko je do struktury \textit{syn} uloženo a pomocí ukazatelů je vytvořen odkaz z otce na syna a opačně. Následně je rekurzivně volána opět funkce \textit{ZapisDoLeva} s vyšším indexem o jedna. 
 
-Jedná-li se o číslo, je uloženo do struktury a opět je vytvořeno propojení mezi otcem a synem. Poté je zavolána funkce \textit{ZapisDoPrava} (viz strana \pageref{ZDP}.), ale je jí předán odkaz na otce. 
+Jedná-li se o číslo, je uloženo do struktury a opět je vytvořeno propojení mezi otcem a~synem. Poté je zavolána funkce \textit{ZapisDoPrava} (viz strana \pageref{ZDP}.), ale je jí předán odkaz na otce. 
 \newpage
 \subsubsection{ZapisDoPrava} \label{ZDP}
 V principu funguje stejně jako předchozí funkce, akorát s tím rozdílem, že pokud se jedná o znaménko netypicky volá funkci \textit{ZapisDoLeva}.  
@@ -298,7 +298,7 @@ Je-li v hlavě uloženo číslo, vypíše se toto číslo a následně konec zá
 \newpage
 \section{Dokumentace neprocedurálního programu}
 \subsection{Vývoj a editace}
-Program byl vyvíjen v jazyce Haskell na platformě linux, jako vývojové prostředí jsme zvolili Atom. Hlavním důvodem bylo to, že existuje velké množství doplňků, které například zvýrazňují syntax Haskellu. Další nástroj, který je nutný pro kompilaci programu, je \textit{stack}. Který je dostupný z oficiálních stránek Haskellu \cite{stack}, ten obsahuje nástroj pro vytváření projektů, je schopen automaticky stahovat velké množství knihoven a navíc již sám o sobě obsahuje nejpoužívanější knihovny.
+Program byl vyvíjen v jazyce Haskell na platformě linux, jako vývojové prostředí jsme zvolili Atom. Hlavním důvodem bylo to, že existuje velké množství doplňků, které například zvýrazňují syntax Haskellu \cite{stack}. Nejdůležitějším nástrojem pro kompilaci je samotný kompilátor GHC, dostupný přímo z oficiálních stránek Haskellu. Další nástroj, který je nutný pro kompilaci programu, je \textit{stack}. Který je dostupný z oficiálních stránek Haskellu \cite{stack}, ten obsahuje nástroj pro vytváření projektů, je schopen automaticky stahovat velké množství knihoven a navíc již sám o sobě obsahuje nejpoužívanější knihovny.
  
 Editace je možná přímo v souboru \textit{Main.hs}, proč tomu tak je jsme již vysvětlili.  
 
@@ -314,7 +314,7 @@ Již z definice Haskellu víme, že program začne vyhodnocovat nejdříve funkc
 Funkce nejdříve postaví levou (\textit{buildLeft} viz strana \pageref{buildLeft}.) část stromu a následně pravou část  (\textit{buildRight} viz strana \pageref{buildRight}.). Výstupem této funkce je datový typ Tree Char. Argumentem, který dostává je list znaků, v programu zvaný \textit{prefix}.
 
 \subsubsection{buildLeft} \label{buildLeft}
-Dostává dva argumenty, jedním z nich je list znaků (\textit{prefix}) a druhým je pomocný datový typ Builder Char (viz strana \pageref{Builder}.). Ten zajišťuje to, aby byl vždy vzat správný prvek z listu. Dalším důvodem jeho použití je to, že si dokáže pamatovat strukturu strom. Pokud-li chceme pomocí této funkce uložit do stromu znaménko, zavolá se opět tato funkce, ale s o jedna větším indexem. Poté co se vynoří z této rekurze, opět se zanoří do rekurze (\textit{buildRight} viz strana \pageref{buildRight}.), ale tentokrát do pravé větve. Obě rekurzivní zanoření končí tu chvíli, kdy chceme do stromu uložit číslo. 
+Dostává dva argumenty, jedním z nich je list znaků (\textit{prefix}) a druhým je pomocný datový typ Builder Char (viz strana \pageref{Builder}.). Ten zajišťuje to, aby byl vždy vzat správný prvek z~listu. Dalším důvodem jeho použití je to, že si dokáže pamatovat strukturu strom. Pokud-li chceme pomocí této funkce uložit do stromu znaménko, zavolá se opět tato funkce, ale s~o~jedna větším indexem. Poté co se vynoří z této rekurze, opět se zanoří do rekurze (\textit{buildRight} viz strana \pageref{buildRight}.), ale tentokrát do pravé větve. Obě rekurzivní zanoření končí tu chvíli, kdy chceme do stromu uložit číslo. 
 Výstupem této funkce je Builder Char, který obsahuje číslo dalšího indexu, který by se měl načítat z listu. Druhou důležitou hodnotu, kterou Builder uchovává je celá struktura stromu pod ním.   
 \subsubsection{buildRight} \label{buildRight}
 Je naprosto stejná jako \textit{buildLeft}. Dala by se nahradit předešlou funkcí, jen s tím rozdílem, že by se volala s jiným argumentem. 
@@ -324,15 +324,15 @@ Tato datová struktura může mít hned dvě podoby. První podobou je ta, ve kt
 \subsubsection{Builder a} \label{Builder}
 Je pomocná stavební struktura, která obsahuje číslo a datovou strukturu stromu. Je využita k uchovávání indexu dalšího členu a vrácení stromu z rekurze.
 \subsubsection{printInfix} \label{printInfix} 
-Argumentem této funkce je struktura stromu a výstupem je vypsání do konzole. Nejdříve vypisuje levou část stromu (\textit{printLeft} viz strana \pageref{printLeft}.), následně vypíše hodnotu uloženou v začátku stromu a jako poslední vypíše pravou větev (\textit{printRight} viz strana \pageref{printRight}.)
+Argumentem této funkce je struktura stromu a výstupem je vypsání do konzole. Nejdříve vypisuje levou část stromu (\textit{printLeft} viz strana \pageref{printLeft}.), následně vypíše hodnotu uloženou v~začátku stromu a jako poslední vypíše pravou větev (\textit{printRight} viz strana \pageref{printRight}.)
 
 \subsubsection{printLeft} \label{printLeft}
-Dostává v argumentu strukturu stromu. Když chceme vypsat hlavu stromu, v níž je uloženo znaménko, nejprve vypíše otevřenou závorku a následně volá funkce sama sebe s argumentem levého syna, poté se vypíše hodnota znaménka v hlavě a následně se vypíše pravá větev (\textit{printRight} viz strana \pageref{printRight}.).
+Dostává v argumentu strukturu stromu. Když chceme vypsat hlavu stromu, v níž je uloženo znaménko, nejprve vypíše otevřenou závorku a následně volá funkce sama sebe s~argumentem levého syna, poté se vypíše hodnota znaménka v hlavě a následně se vypíše pravá větev (\textit{printRight} viz strana \pageref{printRight}.).
 
-Když chceme vypsat hlavu, kde je uloženo číslo vypíšeme nejdříve otevřenou závorku a poté číslo uložené v hlavě. Tím se vracíme o krok zpět v rekurzi.
+Když chceme vypsat hlavu, kde je uloženo číslo vypíšeme nejdříve otevřenou závorku a~poté číslo uložené v hlavě. Tím se vracíme o krok zpět v rekurzi.
 \newpage
 \subsubsection{printRight} \label{printRight}
-Stejně jako předchozí funkce dostává jako argument strukturu stromu. Vypisujeme-li znaménko, nejdříve voláme funkci na vypsání levého stromu, poté vypíšeme hodnotu hlavy a následně vypíšeme pravou větev. Vše ukončíme vypsáním uzavřené závorky.
+Stejně jako předchozí funkce dostává jako argument strukturu stromu. Vypisujeme-li znaménko, nejdříve voláme funkci na vypsání levého stromu, poté vypíšeme hodnotu hlavy a~následně vypíšeme pravou větev. Vše ukončíme vypsáním uzavřené závorky.
 
 Vypisujeme-li číslo, nejprve zobrazíme do konzole číslo a následně ukončenou závorku. 
 
@@ -363,13 +363,13 @@ V Haskellovém programu jsme strom museli stavět rekurzivně a řešení nebylo
 \section{Výhody}
 Funkcionální jazyky umožňují obrovskou míru abstrakce, snazší rozdělení do funkcí nebo modulů. Dají se zde využívat funkce vyšších řádů, a může tak vzniknout kód, který je srozumitelnější a často i kratší nežli jeho imperativní varianta. Výhodou Haskellu je líné vyhodnocování, které mnohdy urychlí algoritmus. V poslední řadě spatřujeme výhodu ve velké striktnosti datových typů.
 \section{Nevýhody}
-Jelikož většina počítačů není navržena pro funkcionální jazyky, může být i papírově efektivnější algoritmus paradoxně pomalejší než jeho imperativní ekvivalent. Některé postupy které známe z nefunkcionálních jazyků lze velice těžko implementovat do funkcionálních programů. Příkladem může být například hašovací tabulka, kterou můžeme znát například z jazyka C\#. 
+Jelikož většina počítačů není navržena pro funkcionální jazyky, může být i papírově efektivnější algoritmus paradoxně pomalejší než jeho imperativní ekvivalent. Některé postupy které známe z~nefunkcionálních jazyků lze velice těžko implementovat do funkcionálních programů. Příkladem může být například hašovací tabulka, kterou můžeme znát například z~jazyka C\#. 
 Další nevýhodou je složitost překladačů a při využití líného vyhodnocení i těžce odhadnutelná paměťová složitost.
 
 \chapter{Závěr}
-V této práci se nám povedlo vytvořit dva rozdílné programy, které jsou však vytvořeny jinou programovací metodou. Oba programy jsou zcela funkční, ale dokáží převádět takové výrazy, které obsahují jen jednociferná čísla. Tyto dvě implementace převodu prefixového zápisu na infixový, nám však poskytli dostatečné znalosti k tomu, abychom mohli porovnat imperativní a neimperativní programovací jazyky. V našem případě konkrétně jazyk C s jazykem Haskell. 
+V této práci se nám povedlo vytvořit dva rozdílné programy, které jsou však vytvořeny jinou programovací metodou. Oba programy jsou zcela funkční, ale dokáží převádět takové výrazy, které obsahují jen jednociferná čísla. Tyto dvě implementace převodu prefixového zápisu na infixový, nám však poskytli dostatečné znalosti k tomu, abychom mohli porovnat imperativní a neimperativní programovací jazyky. V našem případě konkrétně jazyk C s~jazykem Haskell. 
 
-Největší rozdíl spatřujeme ve způsobu myšlení, který je u neimperativního naprosto rozdílný. Výhodou funkcionálních jazyků je abstrakce a jednoduchý zápis některých algoritmů. Hlavní nevýhodou je to, že většina dnešních počítačů není konstruována pro zpracování funkcionálního kódu. Také se nám povedlo vysvětlit základní pojmy funkcionálního programování. 
+Největší rozdíl spatřujeme ve způsobu myšlení, který je u neimperativního naprosto rozdílný. Výhodou funkcionálních jazyků je abstrakce a jednoduchý zápis některých algoritmů. Hlavní nevýhodou je to, že většina dnešních počítačů není konstruována pro zpracování funkcionálního kódu. Druhou nevýhodu spatřujeme v nejednoduše odhadnutelné paměťové složitosti, který plyne z líného vyhodnocování.   
 
 %%% Seznam použité literatury
 \begin{thebibliography}{99}
@@ -402,7 +402,7 @@ Happy: The Parser Generator for Haskell, 2018. haskell.org: Downloads [online]. 
 
 \item \textbf{Git repositář neimperativního programu:}
 
-\url{https://github.com/Zizkai/funkcionalni_programovani_neimperativni_program} 
+\url{https://github.com/Zizkai/funkcionalni_programovani_neimperativni_program}
 \end{enumerate}
 
 \openright
